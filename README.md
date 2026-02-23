@@ -58,20 +58,40 @@ docker compose exec web python manage.py migrate
 
 Este paso crea las tablas de Django y tambien crea un usuario admin de prueba (si no existe).
 
-## 5. Accesos
+## 5. Cargar datos de prueba (obligatorio)
+
+El proyecto trae un fixture con datos demo:
+
+- categorías
+- grupos (`Administradores`, `Vendedores`, `Compradores`)
+- usuarios demo
+- 70 vehículos con imágenes placeholder
+
+Para cargarlo:
+
+```bash
+docker compose exec web python manage.py loaddata core/fixtures/demo_data.json
+```
+
+Nota:
+
+- Si ya cargaste el fixture antes, `loaddata` actualiza registros por PK (no necesitas crear todo a mano).
+- Las imágenes demo usan placeholders y se sirven desde `/media/`.
+
+## 6. Accesos
 
 - Aplicacion: <http://localhost:8000/>
 - Healthcheck: <http://localhost:8000/health/>
 - Admin Django: <http://localhost:8000/admin/>
 
-## 6. Usuario admin de prueba
+## 7. Usuario admin de prueba
 
 Se crea automaticamente al ejecutar `migrate`.
 
 - Usuario: `admin`
 - Password: `admin123`
 
-## 7. Comandos utiles (opcionales)
+## 8. Comandos utiles (opcionales)
 
 Ver logs:
 
@@ -83,6 +103,12 @@ Detener el proyecto:
 
 ```bash
 docker compose down
+```
+
+Volver a cargar datos demo (si actualizas el fixture):
+
+```bash
+docker compose exec web python manage.py loaddata core/fixtures/demo_data.json
 ```
 
 ## Nota breve

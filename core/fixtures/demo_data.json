@@ -1,0 +1,1536 @@
+[
+  {
+    "model": "auth.group",
+    "pk": 1101,
+    "fields": {
+      "name": "Administradores",
+      "permissions": []
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 1102,
+    "fields": {
+      "name": "Vendedores",
+      "permissions": []
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 1103,
+    "fields": {
+      "name": "Compradores",
+      "permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1201,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$dmsdemo2026$1HAOYvel5KbV0xhtQRH4oHos9ldreNM19xjV7dscNU8=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "vendedor_demo_01",
+      "first_name": "Carlos",
+      "last_name": "Ramírez",
+      "email": "carlos.ramirez@dms.local",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-02-01T12:00:00Z",
+      "groups": [
+        1102
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1202,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$dmsdemo2026$1HAOYvel5KbV0xhtQRH4oHos9ldreNM19xjV7dscNU8=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "vendedor_demo_02",
+      "first_name": "Laura",
+      "last_name": "Gómez",
+      "email": "laura.gomez@dms.local",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-02-02T12:00:00Z",
+      "groups": [
+        1102
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1203,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$dmsdemo2026$1HAOYvel5KbV0xhtQRH4oHos9ldreNM19xjV7dscNU8=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "vendedor_demo_03",
+      "first_name": "Andrés",
+      "last_name": "Martínez",
+      "email": "andres.martinez@dms.local",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-02-03T12:00:00Z",
+      "groups": [
+        1102
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1204,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$dmsdemo2026$1HAOYvel5KbV0xhtQRH4oHos9ldreNM19xjV7dscNU8=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "vendedor_demo_04",
+      "first_name": "Paula",
+      "last_name": "Castaño",
+      "email": "paula.castano@dms.local",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-02-04T12:00:00Z",
+      "groups": [
+        1102
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1205,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$dmsdemo2026$1HAOYvel5KbV0xhtQRH4oHos9ldreNM19xjV7dscNU8=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "vendedor_demo_05",
+      "first_name": "Sergio",
+      "last_name": "López",
+      "email": "sergio.lopez@dms.local",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-02-05T12:00:00Z",
+      "groups": [
+        1102
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1206,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$dmsdemo2026$1HAOYvel5KbV0xhtQRH4oHos9ldreNM19xjV7dscNU8=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "vendedor_demo_06",
+      "first_name": "Daniela",
+      "last_name": "Torres",
+      "email": "daniela.torres@dms.local",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-02-06T12:00:00Z",
+      "groups": [
+        1102
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1208,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$dmsdemo2026$1HAOYvel5KbV0xhtQRH4oHos9ldreNM19xjV7dscNU8=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "comprador_demo",
+      "first_name": "Ricardo",
+      "last_name": "Pérez",
+      "email": "comprador_demo@dms.local",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-02-08T12:00:00Z",
+      "groups": [
+        1103
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "core.categoria",
+    "pk": 2101,
+    "fields": {
+      "nombre": "Automóvil",
+      "descripcion": "Vehículos de uso particular como sedanes y hatchbacks."
+    }
+  },
+  {
+    "model": "core.categoria",
+    "pk": 2102,
+    "fields": {
+      "nombre": "Camioneta",
+      "descripcion": "Vehículos utilitarios y de carga liviana tipo pickup."
+    }
+  },
+  {
+    "model": "core.categoria",
+    "pk": 2103,
+    "fields": {
+      "nombre": "Campero",
+      "descripcion": "Vehículos 4x4 para trabajo y viajes en carretera/destapado."
+    }
+  },
+  {
+    "model": "core.categoria",
+    "pk": 2104,
+    "fields": {
+      "nombre": "SUV",
+      "descripcion": "Vehículos utilitarios deportivos para uso familiar y urbano."
+    }
+  },
+  {
+    "model": "core.categoria",
+    "pk": 2105,
+    "fields": {
+      "nombre": "Deportivo",
+      "descripcion": "Vehículos con enfoque en desempeño y diseño deportivo."
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3001,
+    "fields": {
+      "marca": "Kia",
+      "modelo": "Picanto",
+      "ano": 2017,
+      "color": "Negro",
+      "precio": "49800000.00",
+      "placa": "CHV069",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": false,
+      "vendedor": 1206,
+      "observaciones": "Mantenimientos preventivos al día en taller especializado.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-01T13:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3002,
+    "fields": {
+      "marca": "Nissan",
+      "modelo": "X-Trail",
+      "ano": 2016,
+      "color": "Gris Titanio",
+      "precio": "95100000.00",
+      "placa": "YOM848",
+      "categoria": 2104,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1206,
+      "observaciones": "Documentación al día y listo para traspaso.",
+      "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
+      "created_at": "2026-01-01T19:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3003,
+    "fields": {
+      "marca": "Mitsubishi",
+      "modelo": "L200",
+      "ano": 2015,
+      "color": "Plata",
+      "precio": "132000000.00",
+      "placa": "MGS672",
+      "categoria": 2102,
+      "estado": "USADO",
+      "activo": false,
+      "vendedor": 1203,
+      "observaciones": "Vehículo muy cuidado, interior en buen estado.",
+      "imagen": "vehiculos/placeholders/camioneta_placeholder.jpg",
+      "created_at": "2026-01-02T01:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3004,
+    "fields": {
+      "marca": "Jeep",
+      "modelo": "Wrangler",
+      "ano": 2018,
+      "color": "Beige",
+      "precio": "183600000.00",
+      "placa": "AWK385",
+      "categoria": 2103,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1204,
+      "observaciones": "Vehículo muy cuidado, interior en buen estado.",
+      "imagen": "vehiculos/placeholders/campero_placeholder.jpg",
+      "created_at": "2026-01-02T07:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3005,
+    "fields": {
+      "marca": "Suzuki",
+      "modelo": "Jimny",
+      "ano": 2016,
+      "color": "Gris Titanio",
+      "precio": "91800000.00",
+      "placa": "FIH466",
+      "categoria": 2103,
+      "estado": "USADO",
+      "activo": false,
+      "vendedor": 1204,
+      "observaciones": "Excelente estado general, peritaje reciente.",
+      "imagen": "vehiculos/placeholders/campero_placeholder.jpg",
+      "created_at": "2026-01-02T13:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3006,
+    "fields": {
+      "marca": "Suzuki",
+      "modelo": "Swift",
+      "ano": 2022,
+      "color": "Gris Plata",
+      "precio": "62600000.00",
+      "placa": "PFC388",
+      "categoria": 2101,
+      "estado": "NUEVO",
+      "activo": true,
+      "vendedor": 1205,
+      "observaciones": "Excelente estado general, peritaje reciente.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-02T19:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3007,
+    "fields": {
+      "marca": "Jeep",
+      "modelo": "Wrangler",
+      "ano": 2019,
+      "color": "Negro",
+      "precio": "321900000.00",
+      "placa": "CRN859",
+      "categoria": 2103,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1204,
+      "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
+      "imagen": "vehiculos/placeholders/campero_placeholder.jpg",
+      "created_at": "2026-01-03T01:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3008,
+    "fields": {
+      "marca": "Kia",
+      "modelo": "Picanto",
+      "ano": 2020,
+      "color": "Gris Plata",
+      "precio": "70000000.00",
+      "placa": "KNZ020",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1202,
+      "observaciones": "Precio negociable, se recibe peritaje.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-03T07:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3009,
+    "fields": {
+      "marca": "Toyota",
+      "modelo": "RAV4",
+      "ano": 2020,
+      "color": "Gris Titanio",
+      "precio": "134100000.00",
+      "placa": "LHU266",
+      "categoria": 2104,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1203,
+      "observaciones": "Mantenimientos preventivos al día en taller especializado.",
+      "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
+      "created_at": "2026-01-03T13:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3010,
+    "fields": {
+      "marca": "Kia",
+      "modelo": "Picanto",
+      "ano": 2017,
+      "color": "Gris Plata",
+      "precio": "53300000.00",
+      "placa": "AYL814",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1205,
+      "observaciones": "Mantenimientos preventivos al día en taller especializado.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-03T19:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3011,
+    "fields": {
+      "marca": "Kia",
+      "modelo": "Sportage",
+      "ano": 2017,
+      "color": "Negro",
+      "precio": "75200000.00",
+      "placa": "CFQ507",
+      "categoria": 2104,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1204,
+      "observaciones": "Excelente estado general, peritaje reciente.",
+      "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
+      "created_at": "2026-01-04T01:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3012,
+    "fields": {
+      "marca": "Hyundai",
+      "modelo": "Grand i10",
+      "ano": 2020,
+      "color": "Plata",
+      "precio": "53200000.00",
+      "placa": "ERZ053",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1203,
+      "observaciones": "Sin pendientes de impuestos reportados por el propietario.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-04T07:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3013,
+    "fields": {
+      "marca": "Mazda",
+      "modelo": "CX-5",
+      "ano": 2015,
+      "color": "Azul",
+      "precio": "170000000.00",
+      "placa": "BHX946",
+      "categoria": 2104,
+      "estado": "USADO",
+      "activo": false,
+      "vendedor": 1203,
+      "observaciones": "Kilometraje acorde al modelo y año.",
+      "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
+      "created_at": "2026-01-04T13:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3014,
+    "fields": {
+      "marca": "Nissan",
+      "modelo": "Versa",
+      "ano": 2019,
+      "color": "Blanco",
+      "precio": "53900000.00",
+      "placa": "IBG318",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1204,
+      "observaciones": "Documentación al día y listo para traspaso.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-04T19:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3015,
+    "fields": {
+      "marca": "Ford",
+      "modelo": "EcoSport",
+      "ano": 2017,
+      "color": "Rojo",
+      "precio": "80000000.00",
+      "placa": "QRJ681",
+      "categoria": 2104,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1205,
+      "observaciones": "Sin pendientes de impuestos reportados por el propietario.",
+      "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
+      "created_at": "2026-01-05T01:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3016,
+    "fields": {
+      "marca": "Mitsubishi",
+      "modelo": "Montero",
+      "ano": 2015,
+      "color": "Gris Titanio",
+      "precio": "192600000.00",
+      "placa": "FQW225",
+      "categoria": 2103,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1204,
+      "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
+      "imagen": "vehiculos/placeholders/campero_placeholder.jpg",
+      "created_at": "2026-01-05T07:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3017,
+    "fields": {
+      "marca": "Mazda",
+      "modelo": "BT-50",
+      "ano": 2019,
+      "color": "Gris Plata",
+      "precio": "102300000.00",
+      "placa": "XBS950",
+      "categoria": 2102,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1204,
+      "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
+      "imagen": "vehiculos/placeholders/camioneta_placeholder.jpg",
+      "created_at": "2026-01-05T13:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3018,
+    "fields": {
+      "marca": "Chevrolet",
+      "modelo": "Spark GT",
+      "ano": 2013,
+      "color": "Gris Plata",
+      "precio": "26000000.00",
+      "placa": "VBR255",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1204,
+      "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-05T19:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3019,
+    "fields": {
+      "marca": "Renault",
+      "modelo": "Kwid",
+      "ano": 2022,
+      "color": "Verde",
+      "precio": "37600000.00",
+      "placa": "EXR556",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1204,
+      "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-06T01:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3020,
+    "fields": {
+      "marca": "Suzuki",
+      "modelo": "Jimny",
+      "ano": 2014,
+      "color": "Rojo",
+      "precio": "112700000.00",
+      "placa": "QRH722",
+      "categoria": 2103,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1203,
+      "observaciones": "Kilometraje acorde al modelo y año.",
+      "imagen": "vehiculos/placeholders/campero_placeholder.jpg",
+      "created_at": "2026-01-06T07:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3021,
+    "fields": {
+      "marca": "Mazda",
+      "modelo": "Mazda 3",
+      "ano": 2016,
+      "color": "Vinotinto",
+      "precio": "47600000.00",
+      "placa": "UXR863",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1202,
+      "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-06T13:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3022,
+    "fields": {
+      "marca": "Suzuki",
+      "modelo": "Jimny",
+      "ano": 2024,
+      "color": "Gris Plata",
+      "precio": "122800000.00",
+      "placa": "TQH671",
+      "categoria": 2103,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1206,
+      "observaciones": "Mantenimientos preventivos al día en taller especializado.",
+      "imagen": "vehiculos/placeholders/campero_placeholder.jpg",
+      "created_at": "2026-01-06T19:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3023,
+    "fields": {
+      "marca": "Mazda",
+      "modelo": "Mazda 3",
+      "ano": 2023,
+      "color": "Beige",
+      "precio": "130000000.00",
+      "placa": "YHZ035",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1201,
+      "observaciones": "Vehículo muy cuidado, interior en buen estado.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-07T01:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3024,
+    "fields": {
+      "marca": "Toyota",
+      "modelo": "Corolla",
+      "ano": 2016,
+      "color": "Plata",
+      "precio": "114600000.00",
+      "placa": "LLM400",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1204,
+      "observaciones": "Documentación al día y listo para traspaso.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-07T07:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3025,
+    "fields": {
+      "marca": "Mazda",
+      "modelo": "Mazda 3",
+      "ano": 2017,
+      "color": "Beige",
+      "precio": "70700000.00",
+      "placa": "PCK428",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1204,
+      "observaciones": "Precio negociable, se recibe peritaje.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-07T13:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3026,
+    "fields": {
+      "marca": "Kia",
+      "modelo": "Sportage",
+      "ano": 2019,
+      "color": "Blanco",
+      "precio": "75100000.00",
+      "placa": "KTY390",
+      "categoria": 2104,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1202,
+      "observaciones": "Precio negociable, se recibe peritaje.",
+      "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
+      "created_at": "2026-01-07T19:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3027,
+    "fields": {
+      "marca": "Kia",
+      "modelo": "Sportage",
+      "ano": 2019,
+      "color": "Vinotinto",
+      "precio": "106400000.00",
+      "placa": "TSA726",
+      "categoria": 2104,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1206,
+      "observaciones": "Precio negociable, se recibe peritaje.",
+      "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
+      "created_at": "2026-01-08T01:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3028,
+    "fields": {
+      "marca": "Nissan",
+      "modelo": "Versa",
+      "ano": 2022,
+      "color": "Plata",
+      "precio": "87000000.00",
+      "placa": "LVM157",
+      "categoria": 2101,
+      "estado": "NUEVO",
+      "activo": true,
+      "vendedor": 1201,
+      "observaciones": "Precio negociable, se recibe peritaje.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-08T07:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3029,
+    "fields": {
+      "marca": "Mazda",
+      "modelo": "CX-5",
+      "ano": 2020,
+      "color": "Verde",
+      "precio": "176500000.00",
+      "placa": "ISF657",
+      "categoria": 2104,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1203,
+      "observaciones": "Kilometraje acorde al modelo y año.",
+      "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
+      "created_at": "2026-01-08T13:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3030,
+    "fields": {
+      "marca": "BMW",
+      "modelo": "M240i",
+      "ano": 2022,
+      "color": "Vinotinto",
+      "precio": "330600000.00",
+      "placa": "PPX013",
+      "categoria": 2105,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1206,
+      "observaciones": "Mantenimientos preventivos al día en taller especializado.",
+      "imagen": "vehiculos/placeholders/deportivo_placeholder.jpg",
+      "created_at": "2026-01-08T19:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3031,
+    "fields": {
+      "marca": "Suzuki",
+      "modelo": "Swift",
+      "ano": 2024,
+      "color": "Verde",
+      "precio": "43200000.00",
+      "placa": "TRJ280",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1201,
+      "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-09T01:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3032,
+    "fields": {
+      "marca": "Suzuki",
+      "modelo": "Swift",
+      "ano": 2024,
+      "color": "Beige",
+      "precio": "70300000.00",
+      "placa": "IHL740",
+      "categoria": 2101,
+      "estado": "NUEVO",
+      "activo": true,
+      "vendedor": 1206,
+      "observaciones": "Sin pendientes de impuestos reportados por el propietario.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-09T07:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3033,
+    "fields": {
+      "marca": "Chevrolet",
+      "modelo": "Spark GT",
+      "ano": 2012,
+      "color": "Blanco",
+      "precio": "27900000.00",
+      "placa": "XAJ718",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1202,
+      "observaciones": "Kilometraje acorde al modelo y año.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-09T13:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3034,
+    "fields": {
+      "marca": "Renault",
+      "modelo": "Logan",
+      "ano": 2013,
+      "color": "Blanco",
+      "precio": "34700000.00",
+      "placa": "YKJ678",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1203,
+      "observaciones": "Kilometraje acorde al modelo y año.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-09T19:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3035,
+    "fields": {
+      "marca": "Toyota",
+      "modelo": "Hilux",
+      "ano": 2013,
+      "color": "Rojo",
+      "precio": "125900000.00",
+      "placa": "XBH955",
+      "categoria": 2102,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1204,
+      "observaciones": "Documentación al día y listo para traspaso.",
+      "imagen": "vehiculos/placeholders/camioneta_placeholder.jpg",
+      "created_at": "2026-01-10T01:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3036,
+    "fields": {
+      "marca": "Hyundai",
+      "modelo": "Grand i10",
+      "ano": 2020,
+      "color": "Blanco",
+      "precio": "74400000.00",
+      "placa": "OUX895",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": false,
+      "vendedor": 1206,
+      "observaciones": "Vehículo muy cuidado, interior en buen estado.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-10T07:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3037,
+    "fields": {
+      "marca": "Mazda",
+      "modelo": "CX-30",
+      "ano": 2021,
+      "color": "Gris Titanio",
+      "precio": "180000000.00",
+      "placa": "ZZH371",
+      "categoria": 2104,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1204,
+      "observaciones": "Precio negociable, se recibe peritaje.",
+      "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
+      "created_at": "2026-01-10T13:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3038,
+    "fields": {
+      "marca": "Hyundai",
+      "modelo": "Grand i10",
+      "ano": 2018,
+      "color": "Beige",
+      "precio": "61100000.00",
+      "placa": "CAR457",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1206,
+      "observaciones": "Sin pendientes de impuestos reportados por el propietario.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-10T19:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3039,
+    "fields": {
+      "marca": "Renault",
+      "modelo": "Logan",
+      "ano": 2017,
+      "color": "Plata",
+      "precio": "57800000.00",
+      "placa": "QPN865",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1203,
+      "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-11T01:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3040,
+    "fields": {
+      "marca": "Kia",
+      "modelo": "Picanto",
+      "ano": 2022,
+      "color": "Beige",
+      "precio": "62200000.00",
+      "placa": "XVY282",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1205,
+      "observaciones": "Vehículo muy cuidado, interior en buen estado.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-11T07:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3041,
+    "fields": {
+      "marca": "Kia",
+      "modelo": "Rio",
+      "ano": 2018,
+      "color": "Gris Plata",
+      "precio": "41000000.00",
+      "placa": "WLL337",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1201,
+      "observaciones": "Kilometraje acorde al modelo y año.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-11T13:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3042,
+    "fields": {
+      "marca": "Mazda",
+      "modelo": "CX-30",
+      "ano": 2022,
+      "color": "Blanco",
+      "precio": "123900000.00",
+      "placa": "AVN870",
+      "categoria": 2104,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1203,
+      "observaciones": "Vehículo muy cuidado, interior en buen estado.",
+      "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
+      "created_at": "2026-01-11T19:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3043,
+    "fields": {
+      "marca": "Kia",
+      "modelo": "Picanto",
+      "ano": 2017,
+      "color": "Gris Titanio",
+      "precio": "57300000.00",
+      "placa": "NRZ658",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1202,
+      "observaciones": "Sin pendientes de impuestos reportados por el propietario.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-12T01:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3044,
+    "fields": {
+      "marca": "Suzuki",
+      "modelo": "Jimny",
+      "ano": 2014,
+      "color": "Plata",
+      "precio": "150300000.00",
+      "placa": "XIN650",
+      "categoria": 2103,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1205,
+      "observaciones": "Kilometraje acorde al modelo y año.",
+      "imagen": "vehiculos/placeholders/campero_placeholder.jpg",
+      "created_at": "2026-01-12T07:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3045,
+    "fields": {
+      "marca": "Toyota",
+      "modelo": "Prado",
+      "ano": 2020,
+      "color": "Vinotinto",
+      "precio": "247700000.00",
+      "placa": "YHF292",
+      "categoria": 2103,
+      "estado": "USADO",
+      "activo": false,
+      "vendedor": 1202,
+      "observaciones": "Precio negociable, se recibe peritaje.",
+      "imagen": "vehiculos/placeholders/campero_placeholder.jpg",
+      "created_at": "2026-01-12T13:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3046,
+    "fields": {
+      "marca": "Renault",
+      "modelo": "Logan",
+      "ano": 2024,
+      "color": "Negro",
+      "precio": "47700000.00",
+      "placa": "VNA924",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1204,
+      "observaciones": "Kilometraje acorde al modelo y año.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-12T19:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3047,
+    "fields": {
+      "marca": "Kia",
+      "modelo": "Rio",
+      "ano": 2019,
+      "color": "Negro",
+      "precio": "83900000.00",
+      "placa": "OQB849",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1202,
+      "observaciones": "Sin pendientes de impuestos reportados por el propietario.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-13T01:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3048,
+    "fields": {
+      "marca": "Chevrolet",
+      "modelo": "Onix",
+      "ano": 2024,
+      "color": "Negro",
+      "precio": "74800000.00",
+      "placa": "CFU847",
+      "categoria": 2101,
+      "estado": "NUEVO",
+      "activo": true,
+      "vendedor": 1202,
+      "observaciones": "Mantenimientos preventivos al día en taller especializado.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-13T07:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3049,
+    "fields": {
+      "marca": "Toyota",
+      "modelo": "RAV4",
+      "ano": 2023,
+      "color": "Beige",
+      "precio": "209300000.00",
+      "placa": "QNO166",
+      "categoria": 2104,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1202,
+      "observaciones": "Documentación al día y listo para traspaso.",
+      "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
+      "created_at": "2026-01-13T13:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3050,
+    "fields": {
+      "marca": "Mazda",
+      "modelo": "BT-50",
+      "ano": 2019,
+      "color": "Plata",
+      "precio": "98100000.00",
+      "placa": "YAU778",
+      "categoria": 2102,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1203,
+      "observaciones": "Excelente estado general, peritaje reciente.",
+      "imagen": "vehiculos/placeholders/camioneta_placeholder.jpg",
+      "created_at": "2026-01-13T19:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3051,
+    "fields": {
+      "marca": "Nissan",
+      "modelo": "Versa",
+      "ano": 2018,
+      "color": "Beige",
+      "precio": "61600000.00",
+      "placa": "JFE067",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1204,
+      "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-14T01:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3052,
+    "fields": {
+      "marca": "Jeep",
+      "modelo": "Wrangler",
+      "ano": 2022,
+      "color": "Plata",
+      "precio": "209400000.00",
+      "placa": "MYT822",
+      "categoria": 2103,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1202,
+      "observaciones": "Vehículo muy cuidado, interior en buen estado.",
+      "imagen": "vehiculos/placeholders/campero_placeholder.jpg",
+      "created_at": "2026-01-14T07:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3053,
+    "fields": {
+      "marca": "Hyundai",
+      "modelo": "Tucson",
+      "ano": 2020,
+      "color": "Azul",
+      "precio": "89600000.00",
+      "placa": "URR145",
+      "categoria": 2104,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1203,
+      "observaciones": "Documentación al día y listo para traspaso.",
+      "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
+      "created_at": "2026-01-14T13:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3054,
+    "fields": {
+      "marca": "Mitsubishi",
+      "modelo": "L200",
+      "ano": 2015,
+      "color": "Plata",
+      "precio": "169400000.00",
+      "placa": "DHL115",
+      "categoria": 2102,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1205,
+      "observaciones": "Precio negociable, se recibe peritaje.",
+      "imagen": "vehiculos/placeholders/camioneta_placeholder.jpg",
+      "created_at": "2026-01-14T19:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3055,
+    "fields": {
+      "marca": "Kia",
+      "modelo": "Sportage",
+      "ano": 2017,
+      "color": "Azul",
+      "precio": "69200000.00",
+      "placa": "VDL887",
+      "categoria": 2104,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1204,
+      "observaciones": "Sin pendientes de impuestos reportados por el propietario.",
+      "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
+      "created_at": "2026-01-15T01:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3056,
+    "fields": {
+      "marca": "Renault",
+      "modelo": "Logan",
+      "ano": 2017,
+      "color": "Plata",
+      "precio": "51100000.00",
+      "placa": "XJN022",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1203,
+      "observaciones": "Mantenimientos preventivos al día en taller especializado.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-15T07:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3057,
+    "fields": {
+      "marca": "Ford",
+      "modelo": "Mustang",
+      "ano": 2012,
+      "color": "Blanco",
+      "precio": "257600000.00",
+      "placa": "YFM528",
+      "categoria": 2105,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1206,
+      "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
+      "imagen": "vehiculos/placeholders/deportivo_placeholder.jpg",
+      "created_at": "2026-01-15T13:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3058,
+    "fields": {
+      "marca": "Chevrolet",
+      "modelo": "Onix",
+      "ano": 2024,
+      "color": "Vinotinto",
+      "precio": "67900000.00",
+      "placa": "WAT689",
+      "categoria": 2101,
+      "estado": "NUEVO",
+      "activo": true,
+      "vendedor": 1205,
+      "observaciones": "Mantenimientos preventivos al día en taller especializado.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-15T19:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3059,
+    "fields": {
+      "marca": "Chevrolet",
+      "modelo": "Camaro",
+      "ano": 2014,
+      "color": "Negro",
+      "precio": "162200000.00",
+      "placa": "YNK823",
+      "categoria": 2105,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1206,
+      "observaciones": "Vehículo muy cuidado, interior en buen estado.",
+      "imagen": "vehiculos/placeholders/deportivo_placeholder.jpg",
+      "created_at": "2026-01-16T01:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3060,
+    "fields": {
+      "marca": "Kia",
+      "modelo": "Rio",
+      "ano": 2015,
+      "color": "Negro",
+      "precio": "83000000.00",
+      "placa": "JPX488",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1203,
+      "observaciones": "Excelente estado general, peritaje reciente.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-16T07:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3061,
+    "fields": {
+      "marca": "Renault",
+      "modelo": "Duster",
+      "ano": 2016,
+      "color": "Verde",
+      "precio": "99000000.00",
+      "placa": "EFR148",
+      "categoria": 2104,
+      "estado": "USADO",
+      "activo": false,
+      "vendedor": 1204,
+      "observaciones": "Mantenimientos preventivos al día en taller especializado.",
+      "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
+      "created_at": "2026-01-16T13:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3062,
+    "fields": {
+      "marca": "Suzuki",
+      "modelo": "Swift",
+      "ano": 2017,
+      "color": "Gris Plata",
+      "precio": "43800000.00",
+      "placa": "EXY255",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1204,
+      "observaciones": "Precio negociable, se recibe peritaje.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-16T19:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3063,
+    "fields": {
+      "marca": "Mazda",
+      "modelo": "BT-50",
+      "ano": 2021,
+      "color": "Blanco",
+      "precio": "155000000.00",
+      "placa": "FSG996",
+      "categoria": 2102,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1205,
+      "observaciones": "Mantenimientos preventivos al día en taller especializado.",
+      "imagen": "vehiculos/placeholders/camioneta_placeholder.jpg",
+      "created_at": "2026-01-17T01:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3064,
+    "fields": {
+      "marca": "Toyota",
+      "modelo": "Hilux",
+      "ano": 2017,
+      "color": "Blanco",
+      "precio": "194600000.00",
+      "placa": "PXT400",
+      "categoria": 2102,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1202,
+      "observaciones": "Kilometraje acorde al modelo y año.",
+      "imagen": "vehiculos/placeholders/camioneta_placeholder.jpg",
+      "created_at": "2026-01-17T07:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3065,
+    "fields": {
+      "marca": "Chevrolet",
+      "modelo": "Spark GT",
+      "ano": 2014,
+      "color": "Verde",
+      "precio": "31800000.00",
+      "placa": "JND933",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1203,
+      "observaciones": "Excelente estado general, peritaje reciente.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-17T13:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3066,
+    "fields": {
+      "marca": "Nissan",
+      "modelo": "Versa",
+      "ano": 2021,
+      "color": "Beige",
+      "precio": "52300000.00",
+      "placa": "NNX365",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1202,
+      "observaciones": "Documentación al día y listo para traspaso.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-17T19:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3067,
+    "fields": {
+      "marca": "Volkswagen",
+      "modelo": "T-Cross",
+      "ano": 2021,
+      "color": "Verde",
+      "precio": "106500000.00",
+      "placa": "TEV536",
+      "categoria": 2104,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1201,
+      "observaciones": "Excelente estado general, peritaje reciente.",
+      "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
+      "created_at": "2026-01-18T01:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3068,
+    "fields": {
+      "marca": "Hyundai",
+      "modelo": "Grand i10",
+      "ano": 2019,
+      "color": "Gris Plata",
+      "precio": "75700000.00",
+      "placa": "JYN786",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1201,
+      "observaciones": "Precio negociable, se recibe peritaje.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-18T07:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3069,
+    "fields": {
+      "marca": "Chevrolet",
+      "modelo": "Camaro",
+      "ano": 2016,
+      "color": "Gris Plata",
+      "precio": "188300000.00",
+      "placa": "AWR596",
+      "categoria": 2105,
+      "estado": "USADO",
+      "activo": false,
+      "vendedor": 1205,
+      "observaciones": "Excelente estado general, peritaje reciente.",
+      "imagen": "vehiculos/placeholders/deportivo_placeholder.jpg",
+      "created_at": "2026-01-18T13:00:00Z"
+    }
+  },
+  {
+    "model": "core.vehiculo",
+    "pk": 3070,
+    "fields": {
+      "marca": "Chevrolet",
+      "modelo": "Spark GT",
+      "ano": 2016,
+      "color": "Plata",
+      "precio": "28600000.00",
+      "placa": "IRS297",
+      "categoria": 2101,
+      "estado": "USADO",
+      "activo": true,
+      "vendedor": 1202,
+      "observaciones": "Excelente estado general, peritaje reciente.",
+      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "created_at": "2026-01-18T19:00:00Z"
+    }
+  }
+]
