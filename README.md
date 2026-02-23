@@ -31,7 +31,7 @@ docker compose version
 Clona el repositorio y entra a la carpeta del proyecto:
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/santiago-marulanda/NRC61057-aprende-y-mejora-unidad-3.git
 cd NRC61057-aprende-y-mejora-unidad-3
 ```
 
@@ -71,17 +71,7 @@ Se crea automaticamente al ejecutar `migrate`.
 - Usuario: `admin`
 - Password: `admin123`
 
-## 7. Si aparece un error como `auth_user does not exist`
-
-Significa que faltan migraciones.
-
-Ejecuta:
-
-```bash
-docker compose exec web python manage.py migrate
-```
-
-## 8. Comandos utiles (opcionales)
+## 7. Comandos utiles (opcionales)
 
 Ver logs:
 
