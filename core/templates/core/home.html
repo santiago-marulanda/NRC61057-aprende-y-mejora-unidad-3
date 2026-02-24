@@ -1,53 +1,247 @@
+{% load static humanize %}
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DMS | Aprende y Mejora</title>
-    <style>
-      body {
-        margin: 0;
-        font-family: system-ui, sans-serif;
-        background: #f4f7fb;
-        color: #162033;
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DMS | La Red de Usados Más Grande</title>
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-blue: #004b87;
+      --accent-blue: #005691;
+      --bg-light: #f4f7fa;
+      --text-dark: #004b87;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+    }
+
+    /* Navbar */
+    nav {
+      background-color: var(--primary-blue);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 75px;
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 45px;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 35px;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .nav-actions .profile-icon {
+      font-size: 34px;
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      width: 100%;
+      height: 0;
+      padding-top: 29.6%;
+      background-image: url('{% static "core/img/banner.png" %}');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Section Title */
+    .section-title {
+      text-align: center;
+      margin: 50px 0 30px 0;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--primary-blue);
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px 80px 20px;
+    }
+
+    .vehicle-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    /* Card */
+    .vehicle-card {
+      background: var(--white);
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s;
+    }
+
+    .vehicle-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-image-wrap {
+      width: 100%;
+      height: 240px;
+      background-color: #eee;
+    }
+
+    .card-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 25px;
+      position: relative;
+      flex-grow: 1;
+    }
+
+    .v-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin: 0 0 10px 0;
+      line-height: 1.2;
+      min-height: 45px;
+    }
+
+    .v-price {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--primary-blue);
+      margin-bottom: 5px;
+    }
+
+    .v-meta {
+      font-size: 15px;
+      color: var(--accent-blue);
+      font-weight: 600;
+    }
+
+    .call-btn {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.2s;
+      z-index: 10;
+    }
+
+    .call-btn svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .call-btn:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 0 20px;
       }
-      main {
-        max-width: 760px;
-        margin: 48px auto;
-        padding: 24px;
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 12px 32px rgba(22, 32, 51, 0.08);
+
+      .nav-links {
+        display: none;
       }
-      h1 {
-        margin-top: 0;
+
+      .section-title h2 {
+        font-size: 24px;
       }
-      code {
-        background: #eef2f8;
-        padding: 2px 6px;
-        border-radius: 6px;
-      }
-      a {
-        color: #0b63ce;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h1>Proyecto base DMS (Django + PostgreSQL)</h1>
-      <p>
-        Scaffold inicial para la solucion informatica de comercializacion de
-        vehiculos (Aprende y Mejora).
-      </p>
-      <p>
-        Estado de servicio: <a href="/health/">/health/</a>
-      </p>
-      <p>
-        Admin Django: <a href="/admin/">/admin/</a>
-      </p>
-      <p>
-        El usuario admin de prueba se crea con la migracion <code>core.0001</code>.
-      </p>
-    </main>
-  </body>
-  </html>
+    }
+  </style>
+</head>
+
+<body>
+
+  {% include 'includes/header.html' %}
+
+  <header class="hero"></header>
+
+  <section class="section-title">
+    <h2>LO MÁS NUEVO EN DMS</h2>
+  </section>
+
+  <main class="container">
+    <div class="vehicle-grid">
+      {% for v in vehiculos %}
+      <div class="vehicle-card">
+        <div class="card-image-wrap">
+          {% if v.imagen %}
+          <img class="card-image" src="{{ v.imagen.url }}" alt="{{ v.marca }}">
+          {% else %}
+          <img class="card-image" src="https://via.placeholder.com/400x300?text={{ v.modelo }}" alt="Placeholder">
+          {% endif %}
+        </div>
+        <div class="card-body">
+          <h3 class="v-title">{{ v.marca }} {{ v.modelo }} {{ v.color|title }}</h3>
+          <div class="v-price">${{ v.precio|floatformat:0|intcomma }}</div>
+          <div class="v-meta">{{ v.ano|stringformat:"d" }} | {% if v.estado == "NUEVO" %}0{% else %}74.900{% endif %} Km
+          </div>
+          <a href="https://wa.me/573000000000" class="call-btn">
+            <svg viewBox="0 0 512 512" style="width: 100%; height: 100%;">
+              <path fill="#014B87"
+                d="M256.064,0h-0.128C114.784,0,0,114.816,0,256c0,56,18.048,107.904,48.736,150.048l-31.904,95.104l98.4-31.456 C155.712,496.512,204,512,256.064,512C397.216,512,512,397.152,512,256S397.216,0,256.064,0z" />
+              <path fill="#FFF"
+                d="M405.024,361.504 c-6.176,17.44-30.688,31.904-50.24,36.128c-13.376,2.848-30.848,5.12-89.664-19.264C189.888,347.2,141.44,270.752,137.664,265.792 c-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624,26.176-62.304c6.176-6.304,16.384-9.184,26.176-9.184 c3.168,0,6.016,0.16,8.576,0.288c7.52,0.32,11.296,0.768,16.256,12.64c6.176,14.88,21.216,51.616,23.008,55.392 c1.824,3.776,3.648,8.896,1.088,13.856c-2.4,5.12-4.512,7.392-8.288,11.744c-3.776,4.352-7.36,7.68-11.136,12.352 c-3.456,4.064-7.36,8.416-3.008,15.936c4.352,7.36,19.392,31.904,41.536,51.616c28.576,25.44,51.744,33.568,60.032,37.024 c6.176,2.56,13.536,1.952,18.048-2.848c5.728-6.176,12.8-16.416,20-26.496c5.12-7.232,11.584-8.128,18.368-5.568 c6.912,2.4,43.488,20.48,51.008,24.224c7.52,3.776,12.48,5.568,14.304,8.736C411.2,329.152,411.2,344.032,405.024,361.504z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </main>
+
+</body>
+
+</html>

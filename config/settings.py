@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.humanize",
     "core",
 ]
 
@@ -120,6 +121,10 @@ USE_I18N = True
 
 USE_TZ = True
 
+USE_THOUSAND_SEPARATOR = True
+THOUSAND_SEPARATOR = "."
+DECIMAL_SEPARATOR = ","
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
@@ -153,4 +158,42 @@ JAZZMIN_SETTINGS = {
         "core.categoria": "fas fa-tags",
         "core.vehiculo": "fas fa-car",
     },
+    # Use site logo from static files (relative path inside static)
+    "site_logo": "core/img/Logo DMS - White.svg",
+    "site_icon": "core/img/Logo DMS - White.svg",
 }
+
+# UI tweaks for Jazzmin / AdminLTE layout
+# teach Jazzmin which AdminLTE classes should be added to <body>
+JAZZMIN_UI_TWEAKS = {
+    # make the overall container fixed (body.layout-fixed)
+    "layout_fixed": True,
+    # keep navbar & sidebar fixed so they don't scroll with page
+    "navbar_fixed": True,
+    "sidebar_fixed": True,
+    "footer_fixed": False,
+    # disable boxed or topnav modes so sidebar behaves as usual
+    "layout_boxed": False,
+    "layout_topnav": False,
+    "layout_grid": False,
+
+    # sidebar behaviour helpers
+    "sidebar_mini": False,
+    "sidebar_collapse": False,
+    "sidebar_flat": False,
+    "sidebar_nav_small_text": False,
+
+    # visual customisations (optional, not affecting layout)
+    "theme": "light",
+    "accent": "accent",
+    "navbar": "navbar-dark",
+    "sidebar_scrollbar_theme": "os-theme-light",
+    "sidebar_scrollbar_auto_hide": "n",
+}
+
+# Redirect target after successful login (send to admin)
+LOGIN_REDIRECT_URL = "/admin/"
+# Where login_required should redirect
+LOGIN_URL = "/login/"
+# Redirect target after logout
+LOGOUT_REDIRECT_URL = "/"

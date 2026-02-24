@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+/* Apply Montserrat across the admin */
+html, body, .module, .grp-module, .breadcrumbs, .breadcrumb, .navbar, .sidebar, .nav, .jazzmin, .jazzmin * {
+  font-family: 'Montserrat', Arial, sans-serif !important;
+}
+
+/* Brand / navbar color adjustments to match site */
+.navbar, .navbar-inverse, .jazzmin-navbar, .jazzmin-header {
+  background-color: #014B87 !important;
+  border-color: #014B87 !important;
+}
+
+.navbar .navbar-brand img, .jazzmin-brand img {
+  height: 40px !important;
+  display: block !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Sidebar link color tweaks */
+.sidebar .nav > li > a {
+  color: #ffffff !important;
+}
+
+/* Make primary buttons match site */
+.btn-primary, .button, .submit-row input[type="submit"] {
+  background-color: #014B87 !important;
+  border-color: #014B87 !important;
+}
+
+/* Small polish for header text */
+.jazzmin .navbar .navbar-text, .jazzmin .navbar .navbar-brand {
+  color: #ffffff !important;
+}
+
+/* Ensure content background stays light */
+.content, .container-fluid {
+  background: #ffffff;
+}
+
+/* Overall admin page background */
+html, body {
+  background: #eaf8fb !important;
+}
+
+/* Sidebar styling: solid brand color and wider spacing */
+.sidebar, .sidebar .nav, .sidenav, .jazzmin-sidebar {
+  background: #014B87 !important;
+  border-right: none !important;
+}
+.sidebar .nav > li > a, .sidenav a {
+  color: rgba(255,255,255,0.95) !important;
+  padding: 12px 20px !important;
+}
+
+/* Navbar adjustments (height, logo spacing, avatar bubble) */
+.navbar, .jazzmin-navbar {
+  height: 64px !important;
+  min-height: 64px !important;
+}
+.jazzmin .navbar .navbar-brand, .navbar .navbar-brand {
+  padding: 8px 12px !important;
+}
+.user-tools .user, .nav .user {
+  background: #fff !important;
+  color: #014B87 !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12) !important;
+}
+
+/* Content card: rounded white panels like the design */
+.content .module, .content .app-list, .change-list, .module.collapsible {
+  background: #ffffff !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06) !important;
+  padding: 18px !important;
+}
+
+/* Table / list header styling */
+.change-list table thead th, .module table thead th {
+  background: #014B87 !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  border: none !important;
+}
+
+/* Rounded rows / list items feel */
+.change-list table tbody tr td, .change-list table tbody tr {
+  border: none !important;
+  background: transparent !important;
+}
+.results, .changelist-results {
+  background: transparent !important;
+}
+
+/* Action buttons and badges */
+.btn, .button, .model-admin .addlink {
+  background-color: #18a6b7 !important;
+  border-color: #18a6b7 !important;
+}
+.btn:hover, .button:hover { opacity: 0.95 }
+
+/* Improve contrast for headings inside content */
+.content h1, .module h1, .module caption {
+  color: #014B87 !important;
+}
+
+/* Small screens: tidy spacing */
+@media (max-width: 768px) {
+  .sidebar { width: 64px !important }
+}
+
+/* Leave sidebar layout to Jazzmin default behavior; custom positioning caused overlap issues.
+   Colors and spacing below still apply but structural rules have been removed. */
+
+/* Small screens: tidy spacing */
+@media (max-width: 768px) {
+  .sidebar { width: 64px !important }
+}
+
+/* Global primary color enforcement to avoid mixed tones */
+:root {
+  --dms-primary: #014B87;
+  --dms-accent: #18a6b7;
+  --dms-bg: #eaf8fb;
+}
+
+/* Force primary color on common admin elements */
+.navbar, .jazzmin-navbar, .jazzmin-header, .sidebar, .jazzmin-sidebar, .sidenav {
+  background-color: var(--dms-primary) !important;
+  border-color: var(--dms-primary) !important;
+}
+
+a, .module a, .app-list a, .change-list a, .breadcrumbs a, .nav a {
+  color: var(--dms-primary) !important;
+}
+/* Global primary color enforcement to avoid mixed tones */
+:root {
+  --dms-primary: #014B87;
+  --dms-accent: #18a6b7;
+  --dms-bg: #eaf8fb;
+}
+
+/* Force primary color on common admin elements */
+.navbar, .jazzmin-navbar, .jazzmin-header, .sidebar, .jazzmin-sidebar, .sidenav {
+  background-color: var(--dms-primary) !important;
+  border-color: var(--dms-primary) !important;
+}
+
+a, .module a, .app-list a, .change-list a, .breadcrumbs a, .nav a {
+  color: var(--dms-primary) !important;
+}
+
+/* Links that should appear white on dark sidebar */
+.sidebar .nav > li > a, .jazzmin-sidebar a {
+  color: #ffffff !important;
+}
+
+/* Buttons and badges */
+.btn-primary, .button, .model-admin .addlink, .btn, .button.default {
+  background-color: var(--dms-accent) !important;
+  border-color: var(--dms-accent) !important;
+  color: #ffffff !important;
+}
+
+/* Table headers, module captions */
+.change-list table thead th, .module table thead th, .module .module-title, .module caption {
+  background: var(--dms-primary) !important;
+  color: #ffffff !important;
+}
+
+/* Ensure panels have consistent white background and subtle shadow */
+.content .module, .content .app-list, .change-list, .changelist-results {
+  background: #ffffff !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06) !important;
+  border-radius: 10px !important;
+}
+
+/* Page background */
+html, body {
+  background: var(--dms-bg) !important;
+}
+
+/* Avatar / user bubble accent */
+.user-tools .user, .nav .user, .user-tools .avatar {
+  background: #ffffff !important;
+  color: var(--dms-primary) !important;
+}
+
+/* Hover and active states use same primary family */
+.sidebar .nav > li > a:hover, .sidebar .nav > li.active > a, .nav a:hover {
+  background: rgba(1,75,135,0.08) !important;
+  color: #ffffff !important;
+}
+
+/* Tighter consistent spacing for headers and titles */
+.content h1, .module h1, .module .module-title {
+  color: var(--dms-primary) !important;
+  margin-top: 0 !important;
+}
+
+/* Remove brand text next to logo and make the brand area use primary color */
+.jazzmin .navbar-brand .brand-text,
+.jazzmin-brand .brand-text,
+.jazzmin .jazzmin-brand .brand-text,
+.navbar .site-name,
+.jazzmin .navbar .brand-text {
+  display: none !important;
+}
+
+/* Ensure the small left brand strip is the primary blue (not gray) */
+.jazzmin-brand, .branding, .brand, .navbar-brand, .brand-logo {
+  background: var(--dms-primary) !important;
+  box-shadow: none !important;
+}
+
+/* Sidebar top area (where small logo sits) */
+.sidebar .branding, .sidebar .brand {
+  background: var(--dms-primary) !important;
+}
+
+/* Ensure the user icon on the right is aligned and contrasted */
+.user-tools { display:flex; align-items:center; gap:12px; }
+.user-tools .user { margin-right:8px }
+
+/* If any admin theme adds a gray top bar element, override it */
+.jazzmin-header, .jazzmin-topbar, .topbar, .header-top {
+  background: var(--dms-primary) !important;
+  border-bottom: none !important;
+}
+
+/* Strong overrides for any remaining brand/header gray areas */
+.branding, .brand, .jazzmin-brand, .jazzmin-branding, .branding-wrap, .brand-wrap,
+.site-header, .main-header, .site-name, .site-title, .header, .topbar, .navbar-inverse,
+.navbar-default, .navbar-inner, .header-bar, .admin-brand {
+  background-color: var(--dms-primary) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  color: #ffffff !important;
+}
+
+/* Hide textual labels next to logo coming from different themes */
+.branding .brand-text, .branding .site-name, .branding .site-title, .brand-text, .site-name, .site-title,
+.logo-text, .brand-label, .navbar-brand .brand-text, .jazzmin .navbar-brand .brand-text {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Ensure the small left strip and collapsed states also use primary */
+.sidebar .branding, .sidenav .branding, .sidebar .brand, .side-brand, .brand-strip {
+  background: var(--dms-primary) !important;
+}
+
+/* Remove any residual gray backgrounds on top-left logo container */
+.navbar .brand, .navbar .brand > img, .navbar .brand > a, .navbar-brand > img {
+  background: transparent !important;
+}
+
+
+/* Reduce outer margins/paddings so content sits closer to sidebar */
+.container-fluid, .content, .content .container-fluid {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  margin: 0 !important;
+}
+.content { margin-top: 0 !important; }
+.breadcrumbs, .breadcrumb, .module .breadcrumbs {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.change-list, .changelist, .changelist-results, .results {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.module { margin: 0 0 12px 0 !important; }
+.change-list table { margin: 0 !important; }
+.app-list { padding-left: 0 !important; }
+
+/* Slightly tighten spacing inside content cards */
+.content .module, .change-list, .changelist-results { padding: 12px !important; }
+
+

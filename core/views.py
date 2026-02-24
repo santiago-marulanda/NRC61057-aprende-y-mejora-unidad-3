@@ -1,10 +1,23 @@
 from django.db import connection
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.views import LoginView
+
+from .models import Vehiculo
+
+class CustomLoginView(LoginView):
+    template_name = "registration/login.html"
+
+    def dispatch(self, request, *args, **kwargs):
+        # if already authenticated send directly to admin dashboard
+        if request.user.is_authenticated:
+            return redirect("/admin/")
+        return super().dispatch(request, *args, **kwargs)
 
 
 def home(request):
-    return render(request, "core/home.html")
+    vehiculos = Vehiculo.objects.filter(activo=True).order_by("-created_at")[:6]
+    return render(request, "core/home.html", {"vehiculos": vehiculos})
 
 
 def health(request):
