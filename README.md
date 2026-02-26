@@ -84,12 +84,36 @@ Nota:
 - Healthcheck: <http://localhost:8000/health/>
 - Admin Django: <http://localhost:8000/admin/>
 
-## 7. Usuario admin de prueba
+## 7. Usuarios demo y comportamiento por rol
 
-Se crea automaticamente al ejecutar `migrate`.
+Inicia sesión en:
 
-- Usuario: `admin`
-- Password: `admin123`
+- <http://localhost:8000/login/>
+
+Usuarios del fixture (password para todos: `123456`):
+
+- `comprador1`
+- `vendedor1`
+- `admin1`
+
+Comportamiento de cada usuario:
+
+- `comprador1`:
+  - rol `Compradores`
+  - entra al home (`/`)
+  - no puede acceder a `/admin/*`
+- `vendedor1`:
+  - roles `Compradores` + `Vendedores`
+  - tiene permisos para ver/crear/editar `Vehículos` y `Categorías` en admin
+  - puede ver/editar su perfil (`auth.user`)
+  - puede cambiar rol activo desde el menú de usuario en `/admin/` o desde el botón en el home
+- `admin1`:
+  - superusuario (`is_superuser=True`)
+  - acceso completo al panel `/admin/`
+
+Nota:
+
+- Además del fixture, al correr `migrate` también se crea un admin técnico (`admin` / `123456`) si no existe.
 
 ## 8. Comandos utiles (opcionales)
 

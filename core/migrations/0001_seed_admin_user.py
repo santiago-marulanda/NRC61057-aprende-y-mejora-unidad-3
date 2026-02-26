@@ -9,7 +9,7 @@ def create_seed_admin(apps, schema_editor):
 
     username = os.getenv("DJANGO_SUPERUSER_USERNAME", "admin")
     email = os.getenv("DJANGO_SUPERUSER_EMAIL", "admin@dms.local")
-    password = os.getenv("DJANGO_SUPERUSER_PASSWORD", "admin123")
+    password = os.getenv("DJANGO_SUPERUSER_PASSWORD", "123456")
 
     if User.objects.filter(username=username).exists():
         return

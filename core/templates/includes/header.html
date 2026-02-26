@@ -1,7 +1,9 @@
 {% load static %}
 <nav>
   <div class="logo">
-    <img src="{% static 'core/img/Logo DMS - White.svg' %}" alt="DMS">
+    <a href="/">
+      <img src="{% static 'core/img/Logo DMS - White.svg' %}" alt="DMS">
+    </a>
   </div>
   <div class="nav-links">
     <a href="#">Catálogo</a>
@@ -10,6 +12,42 @@
     <a href="#">Contacto</a>
   </div>
   <div class="nav-actions">
-    <a href="/login/" class="profile-icon" aria-label="Iniciar sesión"><i class="fa-solid fa-circle-user"></i></a>
+    {% if request.user.is_authenticated %}
+      {% if request.available_roles|length > 1 %}
+        {% if request.active_role == "comprador" %}
+          <a
+            href="{% url 'cambiar_rol' %}?rol=vendedor&next={{ request.get_full_path|urlencode }}"
+            style="display:inline-flex; align-items:center; gap:8px; text-decoration:none; background:#fff; color:#004b87; border-radius:999px; padding:8px 12px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.6px;"
+            title="Cambiar a vendedor"
+          >
+            <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
+            Cambiar a vendedor
+          </a>
+        {% else %}
+          <a
+            href="{% url 'cambiar_rol' %}?rol=comprador&next={{ request.get_full_path|urlencode }}"
+            style="display:inline-flex; align-items:center; gap:8px; text-decoration:none; background:#fff; color:#004b87; border-radius:999px; padding:8px 12px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.6px;"
+            title="Cambiar a comprador"
+          >
+            <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
+            Cambiar a comprador
+          </a>
+        {% endif %}
+      {% endif %}
+
+      {% if request.active_role == "vendedor" and request.user.is_staff %}
+        <a href="/admin/" class="profile-icon" aria-label="Panel de administración" title="Panel vendedor">
+          <i class="fa-solid fa-gauge-high"></i>
+        </a>
+      {% endif %}
+      <form method="post" action="/admin/logout/" style="margin:0;">
+        {% csrf_token %}
+        <button type="submit" class="profile-icon" aria-label="Cerrar sesión" title="Cerrar sesión" style="border:none; background:transparent; padding:0;">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+      </form>
+    {% else %}
+      <a href="/login/" class="profile-icon" aria-label="Iniciar sesión"><i class="fa-solid fa-circle-user"></i></a>
+    {% endif %}
   </div>
 </nav>

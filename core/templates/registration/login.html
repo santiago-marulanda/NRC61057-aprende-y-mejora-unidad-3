@@ -55,9 +55,9 @@
           {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
 
           <div class="center"><button class="btn" type="submit">ENTRAR</button></div>
-+          {% if form.non_field_errors %}
-+            <div class="errors" style="margin-top:12px;color:#d00;text-align:center;font-weight:600;">{{ form.non_field_errors }}</div>
-+          {% endif %}
+          {% if form.non_field_errors %}
+            <div class="errors" style="margin-top:12px;color:#d00;text-align:center;font-weight:600;">{{ form.non_field_errors }}</div>
+          {% endif %}
         </form>
       </div>
     </div>

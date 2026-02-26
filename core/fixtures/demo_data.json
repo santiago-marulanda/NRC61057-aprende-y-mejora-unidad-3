@@ -12,7 +12,48 @@
     "pk": 1102,
     "fields": {
       "name": "Vendedores",
-      "permissions": []
+      "permissions": [
+        [
+          "view_categoria",
+          "core",
+          "categoria"
+        ],
+        [
+          "add_categoria",
+          "core",
+          "categoria"
+        ],
+        [
+          "change_categoria",
+          "core",
+          "categoria"
+        ],
+        [
+          "view_vehiculo",
+          "core",
+          "vehiculo"
+        ],
+        [
+          "add_vehiculo",
+          "core",
+          "vehiculo"
+        ],
+        [
+          "change_vehiculo",
+          "core",
+          "vehiculo"
+        ],
+        [
+          "view_user",
+          "auth",
+          "user"
+        ],
+        [
+          "change_user",
+          "auth",
+          "user"
+        ]
+      ]
     }
   },
   {
@@ -27,18 +68,18 @@
     "model": "auth.user",
     "pk": 1201,
     "fields": {
-      "password": "pbkdf2_sha256$1000000$dmsdemo2026$1HAOYvel5KbV0xhtQRH4oHos9ldreNM19xjV7dscNU8=",
+      "password": "pbkdf2_sha256$1000000$dmsdemo2026$tok7qbLjoml28TCNeFrSNd8QBq7xH4IOI1IOC0MBr7M=",
       "last_login": null,
       "is_superuser": false,
-      "username": "vendedor_demo_01",
-      "first_name": "Carlos",
-      "last_name": "Ramírez",
-      "email": "carlos.ramirez@dms.local",
+      "username": "comprador1",
+      "first_name": "Camila",
+      "last_name": "Rojas",
+      "email": "comprador1@dms.local",
       "is_staff": false,
       "is_active": true,
       "date_joined": "2026-02-01T12:00:00Z",
       "groups": [
-        1102
+        1103
       ],
       "user_permissions": []
     }
@@ -47,18 +88,19 @@
     "model": "auth.user",
     "pk": 1202,
     "fields": {
-      "password": "pbkdf2_sha256$1000000$dmsdemo2026$1HAOYvel5KbV0xhtQRH4oHos9ldreNM19xjV7dscNU8=",
+      "password": "pbkdf2_sha256$1000000$dmsdemo2026$tok7qbLjoml28TCNeFrSNd8QBq7xH4IOI1IOC0MBr7M=",
       "last_login": null,
       "is_superuser": false,
-      "username": "vendedor_demo_02",
-      "first_name": "Laura",
-      "last_name": "Gómez",
-      "email": "laura.gomez@dms.local",
-      "is_staff": false,
+      "username": "vendedor1",
+      "first_name": "Sebastián",
+      "last_name": "García",
+      "email": "vendedor1@dms.local",
+      "is_staff": true,
       "is_active": true,
       "date_joined": "2026-02-02T12:00:00Z",
       "groups": [
-        1102
+        1102,
+        1103
       ],
       "user_permissions": []
     }
@@ -67,98 +109,18 @@
     "model": "auth.user",
     "pk": 1203,
     "fields": {
-      "password": "pbkdf2_sha256$1000000$dmsdemo2026$1HAOYvel5KbV0xhtQRH4oHos9ldreNM19xjV7dscNU8=",
+      "password": "pbkdf2_sha256$1000000$dmsdemo2026$tok7qbLjoml28TCNeFrSNd8QBq7xH4IOI1IOC0MBr7M=",
       "last_login": null,
-      "is_superuser": false,
-      "username": "vendedor_demo_03",
-      "first_name": "Andrés",
-      "last_name": "Martínez",
-      "email": "andres.martinez@dms.local",
-      "is_staff": false,
+      "is_superuser": true,
+      "username": "admin1",
+      "first_name": "Admin",
+      "last_name": "DMS",
+      "email": "admin1@dms.local",
+      "is_staff": true,
       "is_active": true,
       "date_joined": "2026-02-03T12:00:00Z",
       "groups": [
-        1102
-      ],
-      "user_permissions": []
-    }
-  },
-  {
-    "model": "auth.user",
-    "pk": 1204,
-    "fields": {
-      "password": "pbkdf2_sha256$1000000$dmsdemo2026$1HAOYvel5KbV0xhtQRH4oHos9ldreNM19xjV7dscNU8=",
-      "last_login": null,
-      "is_superuser": false,
-      "username": "vendedor_demo_04",
-      "first_name": "Paula",
-      "last_name": "Castaño",
-      "email": "paula.castano@dms.local",
-      "is_staff": false,
-      "is_active": true,
-      "date_joined": "2026-02-04T12:00:00Z",
-      "groups": [
-        1102
-      ],
-      "user_permissions": []
-    }
-  },
-  {
-    "model": "auth.user",
-    "pk": 1205,
-    "fields": {
-      "password": "pbkdf2_sha256$1000000$dmsdemo2026$1HAOYvel5KbV0xhtQRH4oHos9ldreNM19xjV7dscNU8=",
-      "last_login": null,
-      "is_superuser": false,
-      "username": "vendedor_demo_05",
-      "first_name": "Sergio",
-      "last_name": "López",
-      "email": "sergio.lopez@dms.local",
-      "is_staff": false,
-      "is_active": true,
-      "date_joined": "2026-02-05T12:00:00Z",
-      "groups": [
-        1102
-      ],
-      "user_permissions": []
-    }
-  },
-  {
-    "model": "auth.user",
-    "pk": 1206,
-    "fields": {
-      "password": "pbkdf2_sha256$1000000$dmsdemo2026$1HAOYvel5KbV0xhtQRH4oHos9ldreNM19xjV7dscNU8=",
-      "last_login": null,
-      "is_superuser": false,
-      "username": "vendedor_demo_06",
-      "first_name": "Daniela",
-      "last_name": "Torres",
-      "email": "daniela.torres@dms.local",
-      "is_staff": false,
-      "is_active": true,
-      "date_joined": "2026-02-06T12:00:00Z",
-      "groups": [
-        1102
-      ],
-      "user_permissions": []
-    }
-  },
-  {
-    "model": "auth.user",
-    "pk": 1208,
-    "fields": {
-      "password": "pbkdf2_sha256$1000000$dmsdemo2026$1HAOYvel5KbV0xhtQRH4oHos9ldreNM19xjV7dscNU8=",
-      "last_login": null,
-      "is_superuser": false,
-      "username": "comprador_demo",
-      "first_name": "Ricardo",
-      "last_name": "Pérez",
-      "email": "comprador_demo@dms.local",
-      "is_staff": false,
-      "is_active": true,
-      "date_joined": "2026-02-08T12:00:00Z",
-      "groups": [
-        1103
+        1101
       ],
       "user_permissions": []
     }
@@ -216,7 +178,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": false,
-      "vendedor": 1206,
+      "vendedor": 1202,
       "observaciones": "Mantenimientos preventivos al día en taller especializado.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-01T13:00:00Z"
@@ -235,7 +197,7 @@
       "categoria": 2104,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1206,
+      "vendedor": 1202,
       "observaciones": "Documentación al día y listo para traspaso.",
       "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
       "created_at": "2026-01-01T19:00:00Z"
@@ -254,7 +216,7 @@
       "categoria": 2102,
       "estado": "USADO",
       "activo": false,
-      "vendedor": 1203,
+      "vendedor": 1202,
       "observaciones": "Vehículo muy cuidado, interior en buen estado.",
       "imagen": "vehiculos/placeholders/camioneta_placeholder.jpg",
       "created_at": "2026-01-02T01:00:00Z"
@@ -273,7 +235,7 @@
       "categoria": 2103,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1204,
+      "vendedor": 1202,
       "observaciones": "Vehículo muy cuidado, interior en buen estado.",
       "imagen": "vehiculos/placeholders/campero_placeholder.jpg",
       "created_at": "2026-01-02T07:00:00Z"
@@ -292,7 +254,7 @@
       "categoria": 2103,
       "estado": "USADO",
       "activo": false,
-      "vendedor": 1204,
+      "vendedor": 1202,
       "observaciones": "Excelente estado general, peritaje reciente.",
       "imagen": "vehiculos/placeholders/campero_placeholder.jpg",
       "created_at": "2026-01-02T13:00:00Z"
@@ -311,7 +273,7 @@
       "categoria": 2101,
       "estado": "NUEVO",
       "activo": true,
-      "vendedor": 1205,
+      "vendedor": 1202,
       "observaciones": "Excelente estado general, peritaje reciente.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-02T19:00:00Z"
@@ -330,7 +292,7 @@
       "categoria": 2103,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1204,
+      "vendedor": 1202,
       "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
       "imagen": "vehiculos/placeholders/campero_placeholder.jpg",
       "created_at": "2026-01-03T01:00:00Z"
@@ -368,7 +330,7 @@
       "categoria": 2104,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1203,
+      "vendedor": 1202,
       "observaciones": "Mantenimientos preventivos al día en taller especializado.",
       "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
       "created_at": "2026-01-03T13:00:00Z"
@@ -387,7 +349,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1205,
+      "vendedor": 1202,
       "observaciones": "Mantenimientos preventivos al día en taller especializado.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-03T19:00:00Z"
@@ -406,7 +368,7 @@
       "categoria": 2104,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1204,
+      "vendedor": 1202,
       "observaciones": "Excelente estado general, peritaje reciente.",
       "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
       "created_at": "2026-01-04T01:00:00Z"
@@ -425,7 +387,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1203,
+      "vendedor": 1202,
       "observaciones": "Sin pendientes de impuestos reportados por el propietario.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-04T07:00:00Z"
@@ -444,7 +406,7 @@
       "categoria": 2104,
       "estado": "USADO",
       "activo": false,
-      "vendedor": 1203,
+      "vendedor": 1202,
       "observaciones": "Kilometraje acorde al modelo y año.",
       "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
       "created_at": "2026-01-04T13:00:00Z"
@@ -463,7 +425,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1204,
+      "vendedor": 1202,
       "observaciones": "Documentación al día y listo para traspaso.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-04T19:00:00Z"
@@ -482,7 +444,7 @@
       "categoria": 2104,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1205,
+      "vendedor": 1202,
       "observaciones": "Sin pendientes de impuestos reportados por el propietario.",
       "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
       "created_at": "2026-01-05T01:00:00Z"
@@ -501,7 +463,7 @@
       "categoria": 2103,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1204,
+      "vendedor": 1202,
       "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
       "imagen": "vehiculos/placeholders/campero_placeholder.jpg",
       "created_at": "2026-01-05T07:00:00Z"
@@ -520,7 +482,7 @@
       "categoria": 2102,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1204,
+      "vendedor": 1202,
       "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
       "imagen": "vehiculos/placeholders/camioneta_placeholder.jpg",
       "created_at": "2026-01-05T13:00:00Z"
@@ -539,7 +501,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1204,
+      "vendedor": 1202,
       "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-05T19:00:00Z"
@@ -558,7 +520,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1204,
+      "vendedor": 1202,
       "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-06T01:00:00Z"
@@ -577,7 +539,7 @@
       "categoria": 2103,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1203,
+      "vendedor": 1202,
       "observaciones": "Kilometraje acorde al modelo y año.",
       "imagen": "vehiculos/placeholders/campero_placeholder.jpg",
       "created_at": "2026-01-06T07:00:00Z"
@@ -615,7 +577,7 @@
       "categoria": 2103,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1206,
+      "vendedor": 1202,
       "observaciones": "Mantenimientos preventivos al día en taller especializado.",
       "imagen": "vehiculos/placeholders/campero_placeholder.jpg",
       "created_at": "2026-01-06T19:00:00Z"
@@ -634,7 +596,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1201,
+      "vendedor": 1202,
       "observaciones": "Vehículo muy cuidado, interior en buen estado.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-07T01:00:00Z"
@@ -653,7 +615,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1204,
+      "vendedor": 1202,
       "observaciones": "Documentación al día y listo para traspaso.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-07T07:00:00Z"
@@ -672,7 +634,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1204,
+      "vendedor": 1202,
       "observaciones": "Precio negociable, se recibe peritaje.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-07T13:00:00Z"
@@ -710,7 +672,7 @@
       "categoria": 2104,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1206,
+      "vendedor": 1202,
       "observaciones": "Precio negociable, se recibe peritaje.",
       "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
       "created_at": "2026-01-08T01:00:00Z"
@@ -729,7 +691,7 @@
       "categoria": 2101,
       "estado": "NUEVO",
       "activo": true,
-      "vendedor": 1201,
+      "vendedor": 1202,
       "observaciones": "Precio negociable, se recibe peritaje.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-08T07:00:00Z"
@@ -748,7 +710,7 @@
       "categoria": 2104,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1203,
+      "vendedor": 1202,
       "observaciones": "Kilometraje acorde al modelo y año.",
       "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
       "created_at": "2026-01-08T13:00:00Z"
@@ -767,7 +729,7 @@
       "categoria": 2105,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1206,
+      "vendedor": 1202,
       "observaciones": "Mantenimientos preventivos al día en taller especializado.",
       "imagen": "vehiculos/placeholders/deportivo_placeholder.jpg",
       "created_at": "2026-01-08T19:00:00Z"
@@ -786,7 +748,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1201,
+      "vendedor": 1202,
       "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-09T01:00:00Z"
@@ -805,7 +767,7 @@
       "categoria": 2101,
       "estado": "NUEVO",
       "activo": true,
-      "vendedor": 1206,
+      "vendedor": 1202,
       "observaciones": "Sin pendientes de impuestos reportados por el propietario.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-09T07:00:00Z"
@@ -843,7 +805,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1203,
+      "vendedor": 1202,
       "observaciones": "Kilometraje acorde al modelo y año.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-09T19:00:00Z"
@@ -862,7 +824,7 @@
       "categoria": 2102,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1204,
+      "vendedor": 1202,
       "observaciones": "Documentación al día y listo para traspaso.",
       "imagen": "vehiculos/placeholders/camioneta_placeholder.jpg",
       "created_at": "2026-01-10T01:00:00Z"
@@ -881,7 +843,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": false,
-      "vendedor": 1206,
+      "vendedor": 1202,
       "observaciones": "Vehículo muy cuidado, interior en buen estado.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-10T07:00:00Z"
@@ -900,7 +862,7 @@
       "categoria": 2104,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1204,
+      "vendedor": 1202,
       "observaciones": "Precio negociable, se recibe peritaje.",
       "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
       "created_at": "2026-01-10T13:00:00Z"
@@ -919,7 +881,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1206,
+      "vendedor": 1202,
       "observaciones": "Sin pendientes de impuestos reportados por el propietario.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-10T19:00:00Z"
@@ -938,7 +900,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1203,
+      "vendedor": 1202,
       "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-11T01:00:00Z"
@@ -957,7 +919,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1205,
+      "vendedor": 1202,
       "observaciones": "Vehículo muy cuidado, interior en buen estado.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-11T07:00:00Z"
@@ -976,7 +938,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1201,
+      "vendedor": 1202,
       "observaciones": "Kilometraje acorde al modelo y año.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-11T13:00:00Z"
@@ -995,7 +957,7 @@
       "categoria": 2104,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1203,
+      "vendedor": 1202,
       "observaciones": "Vehículo muy cuidado, interior en buen estado.",
       "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
       "created_at": "2026-01-11T19:00:00Z"
@@ -1033,7 +995,7 @@
       "categoria": 2103,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1205,
+      "vendedor": 1202,
       "observaciones": "Kilometraje acorde al modelo y año.",
       "imagen": "vehiculos/placeholders/campero_placeholder.jpg",
       "created_at": "2026-01-12T07:00:00Z"
@@ -1071,7 +1033,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1204,
+      "vendedor": 1202,
       "observaciones": "Kilometraje acorde al modelo y año.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-12T19:00:00Z"
@@ -1147,7 +1109,7 @@
       "categoria": 2102,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1203,
+      "vendedor": 1202,
       "observaciones": "Excelente estado general, peritaje reciente.",
       "imagen": "vehiculos/placeholders/camioneta_placeholder.jpg",
       "created_at": "2026-01-13T19:00:00Z"
@@ -1166,7 +1128,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1204,
+      "vendedor": 1202,
       "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-14T01:00:00Z"
@@ -1204,7 +1166,7 @@
       "categoria": 2104,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1203,
+      "vendedor": 1202,
       "observaciones": "Documentación al día y listo para traspaso.",
       "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
       "created_at": "2026-01-14T13:00:00Z"
@@ -1223,7 +1185,7 @@
       "categoria": 2102,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1205,
+      "vendedor": 1202,
       "observaciones": "Precio negociable, se recibe peritaje.",
       "imagen": "vehiculos/placeholders/camioneta_placeholder.jpg",
       "created_at": "2026-01-14T19:00:00Z"
@@ -1242,7 +1204,7 @@
       "categoria": 2104,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1204,
+      "vendedor": 1202,
       "observaciones": "Sin pendientes de impuestos reportados por el propietario.",
       "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
       "created_at": "2026-01-15T01:00:00Z"
@@ -1261,7 +1223,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1203,
+      "vendedor": 1202,
       "observaciones": "Mantenimientos preventivos al día en taller especializado.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-15T07:00:00Z"
@@ -1280,7 +1242,7 @@
       "categoria": 2105,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1206,
+      "vendedor": 1202,
       "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
       "imagen": "vehiculos/placeholders/deportivo_placeholder.jpg",
       "created_at": "2026-01-15T13:00:00Z"
@@ -1299,7 +1261,7 @@
       "categoria": 2101,
       "estado": "NUEVO",
       "activo": true,
-      "vendedor": 1205,
+      "vendedor": 1202,
       "observaciones": "Mantenimientos preventivos al día en taller especializado.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-15T19:00:00Z"
@@ -1318,7 +1280,7 @@
       "categoria": 2105,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1206,
+      "vendedor": 1202,
       "observaciones": "Vehículo muy cuidado, interior en buen estado.",
       "imagen": "vehiculos/placeholders/deportivo_placeholder.jpg",
       "created_at": "2026-01-16T01:00:00Z"
@@ -1337,7 +1299,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1203,
+      "vendedor": 1202,
       "observaciones": "Excelente estado general, peritaje reciente.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-16T07:00:00Z"
@@ -1356,7 +1318,7 @@
       "categoria": 2104,
       "estado": "USADO",
       "activo": false,
-      "vendedor": 1204,
+      "vendedor": 1202,
       "observaciones": "Mantenimientos preventivos al día en taller especializado.",
       "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
       "created_at": "2026-01-16T13:00:00Z"
@@ -1375,7 +1337,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1204,
+      "vendedor": 1202,
       "observaciones": "Precio negociable, se recibe peritaje.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-16T19:00:00Z"
@@ -1394,7 +1356,7 @@
       "categoria": 2102,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1205,
+      "vendedor": 1202,
       "observaciones": "Mantenimientos preventivos al día en taller especializado.",
       "imagen": "vehiculos/placeholders/camioneta_placeholder.jpg",
       "created_at": "2026-01-17T01:00:00Z"
@@ -1432,7 +1394,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1203,
+      "vendedor": 1202,
       "observaciones": "Excelente estado general, peritaje reciente.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-17T13:00:00Z"
@@ -1470,7 +1432,7 @@
       "categoria": 2104,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1201,
+      "vendedor": 1202,
       "observaciones": "Excelente estado general, peritaje reciente.",
       "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
       "created_at": "2026-01-18T01:00:00Z"
@@ -1489,7 +1451,7 @@
       "categoria": 2101,
       "estado": "USADO",
       "activo": true,
-      "vendedor": 1201,
+      "vendedor": 1202,
       "observaciones": "Precio negociable, se recibe peritaje.",
       "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
       "created_at": "2026-01-18T07:00:00Z"
@@ -1508,7 +1470,7 @@
       "categoria": 2105,
       "estado": "USADO",
       "activo": false,
-      "vendedor": 1205,
+      "vendedor": 1202,
       "observaciones": "Excelente estado general, peritaje reciente.",
       "imagen": "vehiculos/placeholders/deportivo_placeholder.jpg",
       "created_at": "2026-01-18T13:00:00Z"
