@@ -6,7 +6,7 @@
     </a>
   </div>
   <div class="nav-links">
-    <a href="#">Catálogo</a>
+    <a href="{% url 'catalogo' %}">Catálogo</a>
     <a href="#">Ofertas</a>
     <a href="#">Financiación</a>
     <a href="#">Contacto</a>
@@ -33,12 +33,6 @@
             Cambiar a comprador
           </a>
         {% endif %}
-      {% endif %}
-
-      {% if request.active_role == "vendedor" and request.user.is_staff %}
-        <a href="/admin/" class="profile-icon" aria-label="Panel de administración" title="Panel vendedor">
-          <i class="fa-solid fa-gauge-high"></i>
-        </a>
       {% endif %}
       <form method="post" action="/admin/logout/" style="margin:0;">
         {% csrf_token %}

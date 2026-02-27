@@ -1,0 +1,474 @@
+{% load static humanize l10n %}
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DMS | Catálogo de Vehículos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-blue: #004b87;
+      --accent-blue: #005691;
+      --bg-light: #f4f7fa;
+      --text-dark: #004b87;
+      --white: #ffffff;
+      --soft-blue: #dbeaf7;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+    }
+
+    nav {
+      background-color: var(--primary-blue);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 75px;
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 45px;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 35px;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .nav-actions .profile-icon {
+      font-size: 34px;
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 44px 0 18px 0;
+    }
+
+    .section-title h1 {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--primary-blue);
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .section-title p {
+      margin: 10px 0 0 0;
+      color: var(--accent-blue);
+      font-weight: 500;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px 80px 20px;
+    }
+
+    .filters-panel {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      padding: 24px;
+      margin-bottom: 26px;
+    }
+
+    .filters-form {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(180px, 1fr));
+      gap: 14px;
+      align-items: end;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .field label {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--primary-blue);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .field select {
+      border: 1px solid #c8dff1;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 14px;
+      padding: 12px 14px;
+      color: var(--primary-blue);
+      background-color: var(--white);
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .4px;
+      padding: 11px 18px;
+      cursor: pointer;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-blue);
+      color: var(--white);
+    }
+
+    .btn-light {
+      background-color: var(--soft-blue);
+      color: var(--primary-blue);
+    }
+
+    .results-count {
+      font-size: 15px;
+      color: var(--accent-blue);
+      margin: 0 0 20px 4px;
+      font-weight: 600;
+    }
+
+    .vehicle-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .vehicle-card {
+      background: var(--white);
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s;
+    }
+
+    .vehicle-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-image-wrap {
+      width: 100%;
+      height: 220px;
+      background-color: #eee;
+    }
+
+    .card-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 24px 24px 86px 24px;
+      position: relative;
+      flex-grow: 1;
+    }
+
+    .v-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin: 0 0 10px 0;
+      line-height: 1.2;
+      min-height: 45px;
+    }
+
+    .v-price {
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--primary-blue);
+      margin-bottom: 8px;
+    }
+
+    .v-meta {
+      font-size: 14px;
+      color: var(--accent-blue);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .v-vendedor {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent-blue);
+      line-height: 1.4;
+    }
+
+    .v-vendedor strong {
+      color: var(--primary-blue);
+    }
+
+    .call-btn {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.2s;
+      z-index: 10;
+    }
+
+    .call-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .empty {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      padding: 30px;
+      text-align: center;
+      color: var(--accent-blue);
+      font-weight: 600;
+    }
+
+    .pagination {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pagination-link,
+    .pagination-current {
+      min-width: 42px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .pagination-link {
+      background-color: var(--white);
+      color: var(--primary-blue);
+      border: 1px solid #c8dff1;
+    }
+
+    .pagination-current {
+      background-color: var(--primary-blue);
+      color: var(--white);
+      border: 1px solid var(--primary-blue);
+    }
+
+    .pagination-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent-blue);
+      margin: 0 6px;
+    }
+
+    @media (max-width: 1100px) {
+      .filters-form {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 0 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .section-title h1 {
+        font-size: 28px;
+      }
+
+      .filters-form {
+        grid-template-columns: 1fr;
+      }
+
+      .actions {
+        width: 100%;
+      }
+
+      .btn {
+        flex: 1;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  {% include 'includes/header.html' %}
+
+  <section class="section-title">
+    <h1>Catálogo de Vehículos</h1>
+    <p>Explora vehículos disponibles con datos de vendedor, categoría y estado.</p>
+  </section>
+
+  <main class="container">
+    <section class="filters-panel">
+      <form method="get" class="filters-form">
+        <div class="field">
+          <label for="categoria">Categoría</label>
+          <select id="categoria" name="categoria">
+            <option value="">Todas</option>
+            {% for c in categorias %}
+            <option value="{{ c.id|unlocalize }}" {% if filtros.categoria == c.id|unlocalize %}selected{% endif %}>
+              {{ c.nombre }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="marca">Marca</label>
+          <select id="marca" name="marca">
+            <option value="">Todas</option>
+            {% for m in marcas %}
+            <option value="{{ m }}" {% if filtros.marca == m %}selected{% endif %}>{{ m }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="estado">Estado</label>
+          <select id="estado" name="estado">
+            <option value="">Todos</option>
+            <option value="NUEVO" {% if filtros.estado == "NUEVO" %}selected{% endif %}>Nuevo</option>
+            <option value="USADO" {% if filtros.estado == "USADO" %}selected{% endif %}>Usado</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="orden">Ordenar por</label>
+          <select id="orden" name="orden">
+            <option value="recientes" {% if filtros.orden == "recientes" %}selected{% endif %}>Más recientes</option>
+            <option value="precio_asc" {% if filtros.orden == "precio_asc" %}selected{% endif %}>Precio: menor a mayor</option>
+            <option value="precio_desc" {% if filtros.orden == "precio_desc" %}selected{% endif %}>Precio: mayor a menor</option>
+          </select>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" type="submit">Aplicar</button>
+          <a class="btn btn-light" href="{% url 'catalogo' %}">Limpiar</a>
+        </div>
+      </form>
+    </section>
+
+    <p class="results-count">{{ total_resultados }} vehículo{{ total_resultados|pluralize:"s" }} disponible{{ total_resultados|pluralize:"s" }}</p>
+
+    {% if vehiculos %}
+    <div class="vehicle-grid">
+      {% for v in vehiculos %}
+      <article class="vehicle-card">
+        <div class="card-image-wrap">
+          {% if v.imagen %}
+          <img class="card-image" src="{{ v.imagen.url }}" alt="{{ v.marca }} {{ v.modelo }}">
+          {% else %}
+          <img class="card-image" src="https://via.placeholder.com/400x300?text={{ v.modelo }}" alt="{{ v.marca }}">
+          {% endif %}
+        </div>
+
+        <div class="card-body">
+          <h3 class="v-title">{{ v.marca }} {{ v.modelo }} {{ v.color|title }}</h3>
+          <div class="v-price">${{ v.precio|floatformat:0|intcomma }}</div>
+          <div class="v-meta">{{ v.ano|stringformat:"d" }} | {{ v.get_estado_display }} | {{ v.categoria.nombre }}</div>
+          <div class="v-vendedor">
+            <strong>Vendedor:</strong>
+            {% if v.vendedor.get_full_name %}
+            {{ v.vendedor.get_full_name }}
+            {% else %}
+            {{ v.vendedor.username }}
+            {% endif %}
+            <br>
+            <strong>Contacto:</strong> {{ v.vendedor.email|default:v.vendedor.username }}
+          </div>
+          <a href="https://wa.me/573000000000" class="call-btn" aria-label="Contactar por WhatsApp">
+            <svg viewBox="0 0 512 512" style="width: 100%; height: 100%;">
+              <path fill="#014B87"
+                d="M256.064,0h-0.128C114.784,0,0,114.816,0,256c0,56,18.048,107.904,48.736,150.048l-31.904,95.104l98.4-31.456 C155.712,496.512,204,512,256.064,512C397.216,512,512,397.152,512,256S397.216,0,256.064,0z"></path>
+              <path fill="#FFF"
+                d="M405.024,361.504 c-6.176,17.44-30.688,31.904-50.24,36.128c-13.376,2.848-30.848,5.12-89.664-19.264C189.888,347.2,141.44,270.752,137.664,265.792 c-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624,26.176-62.304c6.176-6.304,16.384-9.184,26.176-9.184 c3.168,0,6.016,0.16,8.576,0.288c7.52,0.32,11.296,0.768,16.256,12.64c6.176,14.88,21.216,51.616,23.008,55.392 c1.824,3.776,3.648,8.896,1.088,13.856c-2.4,5.12-4.512,7.392-8.288,11.744c-3.776,4.352-7.36,7.68-11.136,12.352 c-3.456,4.064-7.36,8.416-3.008,15.936c4.352,7.36,19.392,31.904,41.536,51.616c28.576,25.44,51.744,33.568,60.032,37.024 c6.176,2.56,13.536,1.952,18.048-2.848c5.728-6.176,12.8-16.416,20-26.496c5.12-7.232,11.584-8.128,18.368-5.568 c6.912,2.4,43.488,20.48,51.008,24.224c7.52,3.776,12.48,5.568,14.304,8.736C411.2,329.152,411.2,344.032,405.024,361.504z"></path>
+            </svg>
+          </a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty">
+      No se encontraron vehículos con los filtros seleccionados.
+    </div>
+    {% endif %}
+
+    {% if page_obj.paginator.num_pages > 1 %}
+    <nav class="pagination" aria-label="Paginación de catálogo">
+      {% if page_obj.has_previous %}
+      <a class="pagination-link" href="?{% if filtros_sin_pagina %}{{ filtros_sin_pagina }}&{% endif %}page=1">Primera</a>
+      <a class="pagination-link" href="?{% if filtros_sin_pagina %}{{ filtros_sin_pagina }}&{% endif %}page={{ page_obj.previous_page_number }}">Anterior</a>
+      {% endif %}
+
+      <span class="pagination-label">Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
+      <span class="pagination-current">{{ page_obj.number }}</span>
+
+      {% if page_obj.has_next %}
+      <a class="pagination-link" href="?{% if filtros_sin_pagina %}{{ filtros_sin_pagina }}&{% endif %}page={{ page_obj.next_page_number }}">Siguiente</a>
+      <a class="pagination-link" href="?{% if filtros_sin_pagina %}{{ filtros_sin_pagina }}&{% endif %}page={{ page_obj.paginator.num_pages }}">Última</a>
+      {% endif %}
+    </nav>
+    {% endif %}
+  </main>
+</body>
+
+</html>
