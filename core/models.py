@@ -1,5 +1,7 @@
 from django.conf import settings
+from django.core.exceptions import ValidationError
 from django.db import models
+from django.db.models.functions import Lower
 
 
 class Categoria(models.Model):
@@ -35,7 +37,13 @@ class Vehiculo(models.Model):
     ano = models.PositiveIntegerField() 
     color = models.CharField(max_length=40)
     precio = models.DecimalField(max_digits=12, decimal_places=2)
-    placa = models.CharField(max_length=10, unique=True)
+    placa = models.CharField(
+        max_length=10,
+        unique=True,
+        error_messages={
+            "unique": "Ya existe un vehículo registrado con esa placa.",
+        },
+    )
     categoria = models.ForeignKey(
         Categoria,
         on_delete=models.PROTECT,        
@@ -56,6 +64,36 @@ class Vehiculo(models.Model):
     class Meta:
         verbose_name = "Vehículo"
         verbose_name_plural = "Vehículos"
+        constraints = [
+            models.UniqueConstraint(
+                Lower("placa"),
+                name="uniq_vehiculo_placa_ci",
+            ),
+        ]
+
+    @staticmethod
+    def normalizar_placa(placa):
+        return (placa or "").strip().upper()
+
+    def clean(self):
+        super().clean()
+
+        self.placa = self.normalizar_placa(self.placa)
+        if not self.placa:
+            return
+
+        duplicado = Vehiculo.objects.filter(placa__iexact=self.placa)
+        if self.pk:
+            duplicado = duplicado.exclude(pk=self.pk)
+
+        if duplicado.exists():
+            raise ValidationError(
+                {"placa": "Ya existe un vehículo registrado con esa placa."}
+            )
+
+    def save(self, *args, **kwargs):
+        self.placa = self.normalizar_placa(self.placa)
+        return super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.placa} - {self.marca} {self.modelo} ({self.ano})"

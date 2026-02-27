@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group
+from django.core.exceptions import ValidationError
 from django.test import TestCase
 from django.urls import reverse
 
@@ -172,3 +173,84 @@ class CambioRolTests(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertEqual(response.url, "/")
         self.assertEqual(self.client.session.get("rol_activo"), "comprador")
+
+
+class VehiculoRF4ValidationTests(TestCase):
+    def setUp(self):
+        user_model = get_user_model()
+        self.vendedor = user_model.objects.create_user(
+            username="rf4_vendedor",
+            password="123456",
+            is_staff=True,
+        )
+        self.categoria = Categoria.objects.create(nombre="Camioneta")
+
+    def _vehiculo(self, placa):
+        return Vehiculo(
+            marca="Toyota",
+            modelo="Hilux",
+            ano=2020,
+            color="Blanco",
+            precio="180000000.00",
+            placa=placa,
+            categoria=self.categoria,
+            estado=Vehiculo.Estado.USADO,
+            activo=True,
+            vendedor=self.vendedor,
+        )
+
+    def test_rf4_rechaza_placa_duplicada_con_mensaje(self):
+        Vehiculo.objects.create(
+            marca="Ford",
+            modelo="Ranger",
+            ano=2019,
+            color="Negro",
+            precio="150000000.00",
+            placa="ABC123",
+            categoria=self.categoria,
+            estado=Vehiculo.Estado.USADO,
+            activo=True,
+            vendedor=self.vendedor,
+        )
+
+        vehiculo_duplicado = self._vehiculo("ABC123")
+
+        with self.assertRaises(ValidationError) as error:
+            vehiculo_duplicado.full_clean()
+
+        self.assertIn("placa", error.exception.message_dict)
+        self.assertIn(
+            "Ya existe un vehículo registrado con esa placa.",
+            error.exception.message_dict["placa"],
+        )
+
+    def test_rf4_rechaza_placa_duplicada_sin_importar_mayusculas(self):
+        Vehiculo.objects.create(
+            marca="Ford",
+            modelo="Ranger",
+            ano=2019,
+            color="Negro",
+            precio="150000000.00",
+            placa="ABC123",
+            categoria=self.categoria,
+            estado=Vehiculo.Estado.USADO,
+            activo=True,
+            vendedor=self.vendedor,
+        )
+
+        vehiculo_duplicado = self._vehiculo("abc123")
+
+        with self.assertRaises(ValidationError) as error:
+            vehiculo_duplicado.full_clean()
+
+        self.assertIn(
+            "Ya existe un vehículo registrado con esa placa.",
+            error.exception.message_dict["placa"],
+        )
+
+    def test_rf4_normaliza_placa_al_guardar(self):
+        vehiculo = self._vehiculo("  abc123  ")
+        vehiculo.save()
+        vehiculo.refresh_from_db()
+
+        self.assertEqual(vehiculo.placa, "ABC123")
