@@ -145,7 +145,9 @@ JAZZMIN_SETTINGS = {
     "site_header": "DMS",
     "site_brand": "DMS",
     "welcome_sign": "Panel administrativo DMS",
-    "copyright": "Aprende y Mejora",
+    "copyright": "DMS",
+    # path inside static/ where custom CSS resides
+    "custom_css": "jazzmin/custom.css",
 
     ############
     # Top Menu #

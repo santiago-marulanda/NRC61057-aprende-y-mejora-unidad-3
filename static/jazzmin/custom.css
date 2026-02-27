@@ -1,0 +1,277 @@
+/* Custom Jazzmin overrides
+   - Import Montserrat
+   - Set primary background to #88CADE
+   - Use #37588D for text
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+/* navbar - primary background */
+/* Custom Jazzmin overrides
+   - Import Montserrat
+   - Set primary background to #88CADE
+   - Use #37588D for text
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+/* navbar - primary background */
+body .main-header .navbar,
+.navbar,
+.navbar-dark .navbar,
+.bg-dark,
+.bg-gray-dark {
+    background-color: #88CADE !important;
+    border-color: #6FB0C0 !important;
+    background-image: none !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* navbar links and brand use Montserrat and dark blue text */
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-brand,
+.main-header .navbar .nav-link {
+    color: #37588D !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* sidebar background and font */
+.main-sidebar,
+.main-sidebar .sidebar,
+.sidebar-dark-primary,
+.main-sidebar.sidebar-dark-primary {
+    background-color: #88CADE !important;
+    background-image: none !important;
+    font-family: 'Montserrat', sans-serif !important;
+    color: #37588D !important;
+}
+
+/* brand area */
+.main-sidebar .brand-link,
+.sidebar-dark-primary .brand-link {
+    background-color: #88CADE !important;
+    color: #37588D !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* nav links */
+.sidebar-dark-primary .nav-sidebar .nav-link,
+.main-sidebar .nav-sidebar .nav-link {
+    color: #37588D !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* active / hover */
+.sidebar-dark-primary .nav-sidebar .nav-link.active,
+.sidebar-dark-primary .nav-sidebar .nav-link:focus,
+.sidebar-dark-primary .nav-sidebar .nav-link:hover {
+    background-color: #6FB0C0 !important;
+    color: #37588D !important;
+}
+
+/* Active tab: white background and dark blue text for legibility */
+body .wrapper .main-sidebar .nav-sidebar .nav-link.active,
+body .wrapper .main-sidebar .nav-sidebar .nav-link.active *,
+body .wrapper .main-sidebar .nav-pills .nav-link.active,
+.sidebar-dark-primary .nav-sidebar .nav-link.active,
+.nav-sidebar .nav-link.active {
+    background-color: #ffffff !important;
+    color: #37588D !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+}
+
+/* Ensure icon inside active link also uses the text color */
+body .wrapper .main-sidebar .nav-sidebar .nav-link.active .nav-icon,
+body .wrapper .main-sidebar .nav-sidebar .nav-link.active i,
+.nav-sidebar .nav-link.active .nav-icon {
+    color: #37588D !important;
+    fill: #37588D !important;
+}
+
+/* If active link is inside a treeview, make its parent header still readable */
+body .wrapper .main-sidebar .nav-header,
+body .wrapper .main-sidebar .nav-treeview .nav-link.active ~ .nav-header {
+    color: #37588D !important;
+}
+
+/* user panel */
+.main-sidebar .user-panel .info {
+    color: #37588D !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* brand images */
+.sidebar-dark-primary .brand-link img,
+.main-sidebar .brand-link img {
+    filter: none !important;
+}
+
+/* Very high specificity fallbacks */
+body .wrapper .main-header .navbar { background-color: #88CADE !important; }
+body .wrapper .main-sidebar { background-color: #88CADE !important; }
+
+/* Default admin font */
+body, .wrapper, .content-wrapper, .main-footer {
+    font-family: 'Montserrat', sans-serif !important;
+    color: #37588D !important;
+}
+
+/* Ensure SVG logo and image show in brand area with no rounding and correct color */
+.brand-link img,
+.brand-link img[src$='.svg'],
+.brand-link svg,
+#jazzy-logo .brand-image,
+.main-sidebar .brand-image {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+/* If SVG is inlined, force its fill color */
+.brand-link svg path,
+.brand-link svg g,
+.brand-link svg polygon,
+.brand-link svg circle,
+.brand-link svg rect {
+    fill: #37588D !important;
+    stroke: #37588D !important;
+}
+
+/* Ensure any img fallback for SVG gets a solid color via filter fallback (best-effort) */
+.brand-link img[src$='.svg'] {
+    filter: none !important;
+}
+
+/* Hide the brand text label and show the SVG logo clean (no effects) */
+.brand-text, #jazzy-logo .brand-text, .brand-link .brand-text {
+    display: none !important;
+}
+
+/* Ensure brand image shows raw SVG with no effects */
+.brand-link .brand-image,
+.brand-link picture,
+.brand-link img,
+#jazzy-logo .brand-image,
+.main-sidebar .brand-image {
+    box-shadow: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    background: transparent !important;
+    border: none !important;
+    -webkit-filter: none !important;
+}
+
+/* If logo is an inline SVG or <img src=...svg>, ensure it displays at a sensible size */
+.brand-link img[src$='.svg'],
+.brand-link picture svg,
+#jazzy-logo img[src$='.svg'],
+#jazzy-logo picture svg {
+    width: auto !important;
+    height: 42px !important;
+    display: block !important;
+    fill: none !important;
+}
+
+/* Prevent hover transitions or background on brand area */
+.brand-link,
+#jazzy-logo.brand-link {
+    background: transparent !important;
+}
+.brand-link:hover, .brand-link:focus {
+    background: transparent !important;
+}
+
+/* Extra high-specificity fallback: target the brand area inside the sidebar */
+body .wrapper aside.main-sidebar a.brand-link .brand-image {
+    box-shadow: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Remove visual effects from the sidebar brand/logo */
+#jazzy-logo .brand-image,
+.brand-link .brand-image,
+.main-sidebar .brand-image {
+    box-shadow: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Override elevation utility for brand image */
+.brand-image.elevation-3,
+.brand-image.elevation-2,
+.brand-image.elevation-1 {
+    box-shadow: none !important;
+}
+
+/* Remove any hover transition affecting the brand area */
+.brand-link:hover .brand-image,
+.brand-link:focus .brand-image,
+#jazzy-logo .brand-image:hover {
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* Ensure brand text remains readable and not styled with opacity */
+.brand-text,
+.brand-text * {
+    opacity: 1 !important;
+    color: #37588D !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Force sidebar text color for all sidebar elements (very high specificity) */
+.main-sidebar, .main-sidebar .sidebar, .sidebar-dark-primary, .main-sidebar.sidebar-dark-primary {
+    color: #37588D !important;
+}
+
+.main-sidebar .nav-sidebar .nav-link,
+.main-sidebar .nav-sidebar .nav-link *,
+.sidebar-dark-primary .nav-sidebar .nav-link,
+.sidebar-dark-primary .nav-sidebar .nav-link * {
+    color: #37588D !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.main-sidebar .nav-sidebar .nav-link .nav-icon,
+.main-sidebar .nav-sidebar .nav-link .fas,
+.main-sidebar .nav-sidebar .nav-link .fa,
+.main-sidebar .brand-link,
+.main-sidebar .brand-link * {
+    color: #37588D !important;
+    fill: #37588D !important;
+}
+
+.main-sidebar .nav-sidebar .nav-link:hover,
+.main-sidebar .nav-sidebar .nav-link:focus,
+.main-sidebar .nav-sidebar .nav-link.active {
+    color: #37588D !important;
+}
+
+/* Ensure header text in sidebar user panel is colored */
+.main-sidebar .user-panel .info,
+.main-sidebar .user-panel .info a {
+    color: #37588D !important;
+}
+
+/* Last-resort rule to override inline styles from other libs */
+body .wrapper .main-sidebar * { color: #37588D !important; }
+
+/* Ensure Font Awesome icons keep their font-family and remain visible */
+.fa, .fas, .far, .fab, .fal, .nav-icon, .nav-icon * {
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
+    color: #37588D !important;
+}
+
+/* also handle svg icons if any */
+.nav-icon svg, .nav-icon svg * {
+    fill: #37588D !important;
+}

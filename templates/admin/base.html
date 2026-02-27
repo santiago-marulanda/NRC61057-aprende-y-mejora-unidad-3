@@ -195,10 +195,10 @@
         {% if jazzmin_settings.show_sidebar %}
             {% get_side_menu as side_menu_list %}
 
-            <aside class="main-sidebar elevation-4 {{ jazzmin_ui.sidebar_classes }}" id="jazzy-sidebar">
-                <a href="{% url 'admin:index' %}" class="brand-link {{ jazzmin_ui.brand_classes }}" id="jazzy-logo">
-                    <img src="{% static jazzmin_settings.site_logo %}" alt="{{ jazzmin_settings.site_header }} Logo" class="{{ jazzmin_settings.site_logo_classes }} brand-image elevation-3" style="opacity: .8">
-                    <span class="brand-text font-weight-light">{{ jazzmin_settings.site_brand }}</span>
+            <aside class="main-sidebar elevation-4 {{ jazzmin_ui.sidebar_classes }}" id="jazzy-sidebar" style="background-color: #88CADE !important; color: #37588D !important; font-family: Montserrat, sans-serif !important;">
+                <a href="{% url 'admin:index' %}" class="brand-link {{ jazzmin_ui.brand_classes }}" id="jazzy-logo" style="background: transparent !important; box-shadow: none !important; padding: 0.5rem 0.75rem;">
+                    <img src="{% static jazzmin_settings.site_logo %}" alt="{{ jazzmin_settings.site_header }} Logo" class="{{ jazzmin_settings.site_logo_classes }} brand-image elevation-3" style="opacity: 1 !important; box-shadow: none !important; filter: none !important; transform: none !important; background: transparent !important; border: none !important; width: auto; height:42px;">
+                    <span class="brand-text font-weight-light" style="display:none !important;">{{ jazzmin_settings.site_brand }}</span>
                 </a>
 
                 <div class="sidebar">
@@ -336,9 +336,6 @@
 {% block footer %}
     {% if not is_popup %}
         <footer class="main-footer {{ jazzmin_ui.footer_classes }}">
-            <div class="float-right d-none d-sm-inline">
-                <b>{% trans 'Jazzmin version' %}</b> {% get_jazzmin_version %}
-            </div>
             {% autoescape off %}
                 <strong>{% trans 'Copyright' %} &copy; {% now 'Y' %} {{ jazzmin_settings.copyright }}.</strong> {% trans 'All rights reserved.' %}
             {% endautoescape %}
@@ -396,3 +393,106 @@
 
 </body>
 </html>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const primaryBg = '#88CADE';
+    const textColor = '#37588D';
+    const hoverBg = '#6FB0C0';
+
+    function applyColors() {
+        try {
+            const sidebar = document.querySelector('.main-sidebar') || document.querySelector('.sidebar');
+            const navbar = document.querySelector('.main-header .navbar') || document.querySelector('.navbar');
+
+            if (sidebar) {
+                sidebar.style.setProperty('background-color', primaryBg, 'important');
+                sidebar.style.setProperty('background-image', 'none', 'important');
+                sidebar.style.setProperty('color', textColor, 'important');
+                // apply to children
+                sidebar.querySelectorAll('*').forEach(function(el) {
+                    // skip FontAwesome and nav-icon elements so icons keep their font
+                    var cls = el.classList;
+                    if (!cls) return;
+                    if (cls.contains('fa') || cls.contains('fas') || cls.contains('far') || cls.contains('fab') || cls.contains('fal') || cls.contains('nav-icon')) {
+                        // ensure icon elements don't get Montserrat; remove inline font-family if present
+                        el.style.removeProperty('font-family');
+                        el.style.setProperty('color', textColor, 'important');
+                        return;
+                    }
+                    el.style.setProperty('color', textColor, 'important');
+                    el.style.setProperty('font-family', "Montserrat, sans-serif", 'important');
+                });
+            }
+
+            if (navbar) {
+                navbar.style.setProperty('background-color', primaryBg, 'important');
+                navbar.style.setProperty('border-color', hoverBg, 'important');
+                navbar.style.setProperty('color', textColor, 'important');
+                navbar.querySelectorAll('*').forEach(function(el) {
+                    // keep FontAwesome icons intact
+                    var cls = el.classList;
+                    if (cls && (cls.contains('fa') || cls.contains('fas') || cls.contains('far') || cls.contains('fab') || cls.contains('fal') || cls.contains('nav-icon'))) {
+                        el.style.removeProperty('font-family');
+                        el.style.setProperty('color', textColor, 'important');
+                        return;
+                    }
+                    el.style.setProperty('color', textColor, 'important');
+                });
+            }
+        } catch (e) {
+            console && console.error && console.error('Failed to apply admin color overrides', e);
+        }
+    }
+
+    // initial apply
+    applyColors();
+
+    // reapply when DOM changes (some parts are rendered/updated later)
+    const observer = new MutationObserver(function() {
+        applyColors();
+    });
+    observer.observe(document.body, { childList: true, subtree: true, attributes: true });
+    
+    // Inline SVG logos so we can control fill/color and remove rounded corners
+    function inlineBrandSVG() {
+        try {
+            var img = document.querySelector('#jazzy-logo img');
+            if (!img) return;
+            var src = img.getAttribute('src');
+            if (!src || !src.match(/\.svg(\?|$)/i)) return;
+            // already inlined?
+            if (img.dataset.inlined === '1') return;
+            fetch(src).then(function(r){ return r.text(); }).then(function(svgText){
+                var div = document.createElement('div');
+                div.innerHTML = svgText.trim();
+                var svg = div.querySelector('svg');
+                if (!svg) return;
+                // remove any rounded attributes and classes
+                svg.removeAttribute('class');
+                svg.style.setProperty('border-radius','0','important');
+                svg.style.setProperty('overflow','visible','important');
+                svg.style.setProperty('height','42px','important');
+                svg.style.setProperty('width','auto','important');
+                // force fill/stroke color
+                svg.querySelectorAll('*').forEach(function(el){
+                    if (el.style) {
+                        el.style.setProperty('fill','#37588D','important');
+                        el.style.setProperty('stroke','#37588D','important');
+                    }
+                });
+                img.parentNode.replaceChild(svg, img);
+            }).catch(function(e){
+                // ignore fetch errors
+                console && console.warn && console.warn('Could not inline brand svg', e);
+            });
+        } catch (e) {
+            console && console.error && console.error('inlineBrandSVG failed', e);
+        }
+    }
+
+    inlineBrandSVG();
+    // try again after mutations to catch later renders
+    observer.observe(document.body, { childList: true, subtree: true });
+});
+</script>

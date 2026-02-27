@@ -34,7 +34,7 @@ class Vehiculo(models.Model):
 
     marca = models.CharField(max_length=60)
     modelo = models.CharField(max_length=80)
-    ano = models.PositiveIntegerField() 
+    ano = models.PositiveIntegerField(verbose_name="año") 
     color = models.CharField(max_length=40)
     precio = models.DecimalField(max_digits=12, decimal_places=2)
     placa = models.CharField(

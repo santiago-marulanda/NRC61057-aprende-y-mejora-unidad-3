@@ -1,0 +1,69 @@
+/* High-specificity overrides for Jazzmin/AdminLTE main.css
+   Force primary navbar/sidebar color to #88CADE
+*/
+
+/* navbar */
+body .main-header .navbar,
+.navbar-dark,
+.skin-blue .main-header .navbar,
+.main-header .navbar.navbar-dark {
+  background-color: #88CADE !important;
+  border-color: #6FB0C0 !important;
+  background-image: none !important;
+}
+
+/* navbar links and brand */
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-brand,
+.main-header .navbar .nav-link {
+  color: #ffffff !important;
+}
+
+/* sidebar - main container and inner sidebar */
+.main-sidebar,
+.main-sidebar .sidebar,
+.sidebar-dark-primary,
+.main-sidebar.sidebar-dark-primary {
+  background-color: #88CADE !important;
+  background-image: none !important;
+}
+
+/* brand area */
+.main-sidebar .brand-link,
+.sidebar-dark-primary .brand-link {
+  background-color: #88CADE !important;
+  color: #ffffff !important;
+}
+
+/* nav links */
+.sidebar-dark-primary .nav-sidebar .nav-link,
+.main-sidebar .nav-sidebar .nav-link {
+  color: #ffffff !important;
+}
+
+/* active / hover */
+.sidebar-dark-primary .nav-sidebar .nav-link.active,
+.sidebar-dark-primary .nav-sidebar .nav-link:focus,
+.sidebar-dark-primary .nav-sidebar .nav-link:hover,
+.main-sidebar .nav-sidebar .nav-link.active,
+.main-sidebar .nav-sidebar .nav-link:hover {
+  background-color: #ffffff !important;
+  color: #37588D !important;
+  box-shadow: none !important;
+  border-radius: 0.25rem !important;
+}
+
+/* user panel */
+.main-sidebar .user-panel .info {
+  color: #ffffff !important;
+}
+
+/* icons and images - ensure contrast */
+.sidebar-dark-primary .brand-link img,
+.main-sidebar .brand-link img {
+  filter: none !important;
+}
+
+/* Very high specificity fallback: body + ids */
+body .wrapper .main-header .navbar { background-color: #88CADE !important; }
+body .wrapper .main-sidebar { background-color: #88CADE !important; }
