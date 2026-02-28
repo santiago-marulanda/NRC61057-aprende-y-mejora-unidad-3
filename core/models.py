@@ -50,6 +50,7 @@ class Vehiculo(models.Model):
         related_name="vehiculos",
     )
     estado = models.CharField(max_length=5, choices=Estado.choices)
+    kilometraje = models.PositiveIntegerField(default=0)
     activo = models.BooleanField(default=True)
 
     vendedor = models.ForeignKey(

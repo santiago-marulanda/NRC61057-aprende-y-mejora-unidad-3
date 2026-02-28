@@ -28,6 +28,7 @@ class VehiculoAdmin(admin.ModelAdmin):
         "ano_sin_separador",
         "categoria",
         "estado",
+        "kilometraje",
         "precio",
         "vendedor",
         "activo",
@@ -41,4 +42,3 @@ class VehiculoAdmin(admin.ModelAdmin):
 
     # Mejora la UX en admin para relaciones
     autocomplete_fields = ("categoria", "vendedor")
-

@@ -232,8 +232,7 @@
         <div class="card-body">
           <h3 class="v-title">{{ v.marca }} {{ v.modelo }} {{ v.color|title }}</h3>
           <div class="v-price">${{ v.precio|floatformat:0|intcomma }}</div>
-          <div class="v-meta">Año {{ v.ano }} | {% if v.estado == "NUEVO" %}0{% else %}74.900{% endif %} Km
-          </div>
+          <div class="v-meta">Año {{ v.ano }} | {{ v.kilometraje|intcomma }} km</div>
           <a href="https://wa.me/573000000000" class="call-btn">
             <svg viewBox="0 0 512 512" style="width: 100%; height: 100%;">
               <path fill="#014B87"

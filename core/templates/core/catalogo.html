@@ -423,7 +423,9 @@
         <div class="card-body">
           <h3 class="v-title">{{ v.marca }} {{ v.modelo }} {{ v.color|title }}</h3>
           <div class="v-price">${{ v.precio|floatformat:0|intcomma }}</div>
-          <div class="v-meta">{{ v.ano|stringformat:"d" }} | {{ v.get_estado_display }} | {{ v.categoria.nombre }}</div>
+          <div class="v-meta">
+            {{ v.ano|stringformat:"d" }} | {{ v.get_estado_display }} | {{ v.kilometraje|intcomma }} km | {{ v.categoria.nombre }}
+          </div>
           <div class="v-vendedor">
             <strong>Vendedor:</strong>
             {% if v.vendedor.get_full_name %}
