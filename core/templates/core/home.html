@@ -224,9 +224,13 @@
       <div class="vehicle-card">
         <div class="card-image-wrap">
           {% if v.imagen %}
-          <img class="card-image" src="{{ v.imagen.url }}" alt="{{ v.marca }}">
+            {% if v.imagen.name|slice:":4" == "http" %}
+              <img class="card-image" src="{{ v.imagen.name }}" alt="{{ v.marca }}">
+            {% else %}
+              <img class="card-image" src="{{ v.imagen.url }}" alt="{{ v.marca }}">
+            {% endif %}
           {% else %}
-          <img class="card-image" src="https://via.placeholder.com/400x300?text={{ v.modelo }}" alt="Placeholder">
+            <img class="card-image" src="https://via.placeholder.com/400x300?text={{ v.modelo }}" alt="Placeholder">
           {% endif %}
         </div>
         <div class="card-body">
