@@ -275,3 +275,63 @@ body .wrapper .main-sidebar * { color: #37588D !important; }
 .nav-icon svg, .nav-icon svg * {
     fill: #37588D !important;
 }
+
+/* High-specificity override for AdminLTE / Jazzmin active sidebar link colors
+   - Ensures any existing rule (e.g., using #007bff / white) is overridden
+   - Sets white background and dark-blue text (#37588D) for active links */
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active,
+.sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: #ffffff !important;
+    color: #37588D !important;
+}
+
+/* Ensure icons inside the active link also get the same color */
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active .nav-icon,
+.sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active .nav-icon {
+    color: #37588D !important;
+    fill: #37588D !important;
+}
+
+/* Extra-specificity fallback: remove any remaining blue overlay/shadow */
+body .wrapper aside.main-sidebar .nav-sidebar .nav-item > .nav-link.active,
+body .wrapper aside.main-sidebar .nav-sidebar .nav-item > a.nav-link.active,
+.main-sidebar .nav-sidebar .nav-item > .nav-link.active,
+.main-sidebar .nav-sidebar .nav-item > a.nav-link.active {
+    background-color: #ffffff !important;
+    color: #37588D !important;
+    box-shadow: none !important;
+    background-image: none !important;
+    border: none !important;
+    border-radius: 8px !important;
+}
+
+body .wrapper aside.main-sidebar .nav-sidebar .nav-item > .nav-link.active::before,
+body .wrapper aside.main-sidebar .nav-sidebar .nav-item > .nav-link.active::after,
+.main-sidebar .nav-sidebar .nav-item > .nav-link.active::before,
+.main-sidebar .nav-sidebar .nav-item > .nav-link.active::after {
+    background: transparent !important;
+    content: none !important;
+}
+
+/* Exact selectors requested: force pure white background and #37588D text/icon */
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active,
+.sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: #FFFFFF !important;
+    color: #37588D !important;
+    box-shadow: none !important;
+    background-image: none !important;
+    border: none !important;
+}
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active .nav-icon,
+.sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active .nav-icon {
+    color: #37588D !important;
+    fill: #37588D !important;
+}
+
+/* Extra-specific variants to outweight other rules */
+body .wrapper .sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active,
+body .wrapper .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: #FFFFFF !important;
+    color: #37588D !important;
+}

@@ -5,6 +5,58 @@ html, body, .module, .grp-module, .breadcrumbs, .breadcrumb, .navbar, .sidebar, 
   font-family: 'Montserrat', Arial, sans-serif !important;
 }
 
+/* Strong, last-resort override to force active sidebar link appearance */
+body .wrapper aside.main-sidebar .nav-sidebar .nav-item > .nav-link.active,
+body .wrapper aside.main-sidebar .nav-sidebar .nav-item > a.nav-link.active,
+.main-sidebar .nav-sidebar .nav-item > .nav-link.active,
+.main-sidebar .nav-sidebar .nav-item > a.nav-link.active {
+  background-color: #ffffff !important;
+  color: #37588D !important;
+  box-shadow: none !important;
+  background-image: none !important;
+  border: none !important;
+  border-radius: 8px !important;
+}
+
+/* Remove any pseudo-element or overlay that could add a blue background */
+body .wrapper aside.main-sidebar .nav-sidebar .nav-item > .nav-link.active::before,
+body .wrapper aside.main-sidebar .nav-sidebar .nav-item > .nav-link.active::after,
+.main-sidebar .nav-sidebar .nav-item > .nav-link.active::before,
+.main-sidebar .nav-sidebar .nav-item > .nav-link.active::after {
+  background: transparent !important;
+  content: none !important;
+}
+
+/* Ensure icons inside active link match text color */
+body .wrapper aside.main-sidebar .nav-sidebar .nav-item > .nav-link.active .nav-icon,
+.main-sidebar .nav-sidebar .nav-item > .nav-link.active .nav-icon {
+  color: #37588D !important;
+  fill: #37588D !important;
+}
+
+/* Exact selectors requested: force pure white background and #37588D text/icon */
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active,
+.sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+  background-color: #FFFFFF !important;
+  color: #37588D !important;
+  box-shadow: none !important;
+  background-image: none !important;
+  border: none !important;
+}
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active .nav-icon,
+.sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active .nav-icon {
+  color: #37588D !important;
+  fill: #37588D !important;
+}
+
+/* Body-wrapper high-specificity aliases */
+body .wrapper .sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active,
+body .wrapper .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+  background-color: #FFFFFF !important;
+  color: #37588D !important;
+}
+
 /* Brand / navbar color adjustments to match site */
 .navbar, .navbar-inverse, .jazzmin-navbar, .jazzmin-header {
   background-color: #014B87 !important;
