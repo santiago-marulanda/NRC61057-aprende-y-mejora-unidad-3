@@ -401,7 +401,7 @@
       "activo": true,
       "vendedor": 1202,
       "observaciones": "Sin pendientes de impuestos reportados por el propietario.",
-      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "imagen": "https://hyundaicleber.com/wp-content/uploads/2020/01/grand-i10-sedan-plata-3-32_-20200806t111854.jpg",
       "created_at": "2026-01-04T07:00:00Z"
     }
   },
@@ -1501,7 +1501,7 @@
       "activo": true,
       "vendedor": 1202,
       "observaciones": "Excelente estado general, peritaje reciente.",
-      "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
+      "imagen": "https://www.volkswagenbarcelona.es/uploads/cms/con_contenido/plataforma_2/03/27/81/images/Tcross1.png",
       "created_at": "2026-01-18T01:00:00Z"
     }
   },
@@ -1521,7 +1521,7 @@
       "activo": true,
       "vendedor": 1202,
       "observaciones": "Precio negociable, se recibe peritaje.",
-      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "imagen": "https://hyundaicleber.com/wp-content/uploads/2020/01/grand-i10-sedan-plata-3-32_-20200806t111854.jpg",
       "created_at": "2026-01-18T07:00:00Z"
     }
   },
@@ -1541,7 +1541,7 @@
       "activo": false,
       "vendedor": 1202,
       "observaciones": "Excelente estado general, peritaje reciente.",
-      "imagen": "vehiculos/placeholders/deportivo_placeholder.jpg",
+      "imagen": "https://www.volkswagenbarcelona.es/uploads/cms/con_contenido/plataforma_2/03/27/81/images/Tcross1.png",
       "created_at": "2026-01-18T13:00:00Z"
     }
   },
@@ -1561,7 +1561,7 @@
       "activo": true,
       "vendedor": 1202,
       "observaciones": "Excelente estado general, peritaje reciente.",
-      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "imagen": "https://abcrentacar.com.co/wp-content/plugins/vikrentcar/admin/resources/chv-spark2.webp",
       "created_at": "2026-01-18T19:00:00Z"
     }
   }

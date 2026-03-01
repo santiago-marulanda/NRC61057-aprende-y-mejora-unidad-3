@@ -1,4 +1,4 @@
-{% load static humanize l10n %}
+{% load static humanize l10n pagination_tags %}
 <!doctype html>
 <html lang="es">
 
@@ -279,19 +279,25 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       flex-wrap: wrap;
+      padding: 12px;
+      background: transparent;
     }
 
     .pagination-link,
-    .pagination-current {
-      min-width: 42px;
-      padding: 10px 12px;
-      border-radius: 999px;
+    .pagination-current,
+    .pagination-ellipsis {
+      min-width: 40px;
+      padding: 9px 12px;
+      border-radius: 10px;
       text-align: center;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
       text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .pagination-link {
@@ -300,17 +306,32 @@
       border: 1px solid #c8dff1;
     }
 
+    .pagination-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,75,135,0.06);
+    }
+
     .pagination-current {
       background-color: var(--primary-blue);
       color: var(--white);
       border: 1px solid var(--primary-blue);
+      box-shadow: 0 6px 18px rgba(0,75,135,0.12);
+      border-radius: 12px;
+      padding: 9px 14px;
     }
 
-    .pagination-label {
-      font-size: 14px;
-      font-weight: 600;
+    .pagination-ellipsis {
+      background: transparent;
       color: var(--accent-blue);
-      margin: 0 6px;
+      border: none;
+      padding: 0 6px;
+      font-weight: 700;
+    }
+
+    .pagination-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     @media (max-width: 1100px) {
@@ -343,6 +364,23 @@
       .btn {
         flex: 1;
         text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .pagination-info {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .pagination-link, .pagination-current {
+        min-width: 36px;
+        padding: 8px 10px;
+      }
+
+      .pagination-label {
+        padding: 4px 8px !important;
+        font-size: 13px;
       }
     }
   </style>
@@ -414,9 +452,13 @@
       <article class="vehicle-card">
         <div class="card-image-wrap">
           {% if v.imagen %}
-          <img class="card-image" src="{{ v.imagen.url }}" alt="{{ v.marca }} {{ v.modelo }}">
+            {% if v.imagen.name|slice:":4" == "http" %}
+              <img class="card-image" src="{{ v.imagen.name }}" alt="{{ v.marca }} {{ v.modelo }}">
+            {% else %}
+              <img class="card-image" src="{{ v.imagen.url }}" alt="{{ v.marca }} {{ v.modelo }}">
+            {% endif %}
           {% else %}
-          <img class="card-image" src="https://via.placeholder.com/400x300?text={{ v.modelo }}" alt="{{ v.marca }}">
+            <img class="card-image" src="https://via.placeholder.com/400x300?text={{ v.modelo }}" alt="{{ v.marca }}">
           {% endif %}
         </div>
 
@@ -456,17 +498,28 @@
 
     {% if page_obj.paginator.num_pages > 1 %}
     <nav class="pagination" aria-label="Paginación de catálogo">
+      {% pagination_range page_obj 2 as page_range %}
+
       {% if page_obj.has_previous %}
-      <a class="pagination-link" href="?{% if filtros_sin_pagina %}{{ filtros_sin_pagina }}&{% endif %}page=1">Primera</a>
-      <a class="pagination-link" href="?{% if filtros_sin_pagina %}{{ filtros_sin_pagina }}&{% endif %}page={{ page_obj.previous_page_number }}">Anterior</a>
+        <a class="pagination-link" href="?{% if filtros_sin_pagina %}{{ filtros_sin_pagina }}&{% endif %}page={{ page_obj.previous_page_number }}" aria-label="Anterior">«</a>
+      {% else %}
+        <span class="pagination-link disabled" aria-hidden="true">«</span>
       {% endif %}
 
-      <span class="pagination-label">Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
-      <span class="pagination-current">{{ page_obj.number }}</span>
+      {% for p in page_range %}
+        {% if p == '...' %}
+          <span class="pagination-ellipsis">…</span>
+        {% elif p == page_obj.number %}
+          <span class="pagination-current" aria-current="page">{{ p }}</span>
+        {% else %}
+          <a class="pagination-link" href="?{% if filtros_sin_pagina %}{{ filtros_sin_pagina }}&{% endif %}page={{ p }}">{{ p }}</a>
+        {% endif %}
+      {% endfor %}
 
       {% if page_obj.has_next %}
-      <a class="pagination-link" href="?{% if filtros_sin_pagina %}{{ filtros_sin_pagina }}&{% endif %}page={{ page_obj.next_page_number }}">Siguiente</a>
-      <a class="pagination-link" href="?{% if filtros_sin_pagina %}{{ filtros_sin_pagina }}&{% endif %}page={{ page_obj.paginator.num_pages }}">Última</a>
+        <a class="pagination-link" href="?{% if filtros_sin_pagina %}{{ filtros_sin_pagina }}&{% endif %}page={{ page_obj.next_page_number }}" aria-label="Siguiente">»</a>
+      {% else %}
+        <span class="pagination-link disabled" aria-hidden="true">»</span>
       {% endif %}
     </nav>
     {% endif %}
