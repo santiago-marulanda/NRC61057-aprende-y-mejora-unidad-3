@@ -181,7 +181,7 @@
       "activo": true,
       "vendedor": 1202,
       "observaciones": "Mantenimientos preventivos al día en taller especializado.",
-      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "imagen": "vehiculos/Kia Picanto Negro.png",
       "created_at": "2026-01-01T13:00:00Z"
     }
   },
@@ -201,7 +201,7 @@
       "activo": true,
       "vendedor": 1202,
       "observaciones": "Documentación al día y listo para traspaso.",
-      "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
+      "imagen": "vehiculos/Nissan X-Trail Gris Titanio.png",
       "created_at": "2026-01-01T19:00:00Z"
     }
   },
@@ -221,7 +221,7 @@
       "activo": true,
       "vendedor": 1202,
       "observaciones": "Vehículo muy cuidado, interior en buen estado.",
-      "imagen": "vehiculos/placeholders/camioneta_placeholder.jpg",
+      "imagen": "vehiculos/Mitsubishi L200 Plata.png",
       "created_at": "2026-01-02T01:00:00Z"
     }
   },
@@ -241,7 +241,7 @@
       "activo": true,
       "vendedor": 1202,
       "observaciones": "Vehículo muy cuidado, interior en buen estado.",
-      "imagen": "vehiculos/placeholders/campero_placeholder.jpg",
+      "imagen": "vehiculos/Jeep Wrangler Beige.png",
       "created_at": "2026-01-02T07:00:00Z"
     }
   },
@@ -261,7 +261,7 @@
       "activo": true,
       "vendedor": 1202,
       "observaciones": "Excelente estado general, peritaje reciente.",
-      "imagen": "vehiculos/placeholders/campero_placeholder.jpg",
+      "imagen": "vehiculos/Suzuki Jimny Gris Titanio.png",
       "created_at": "2026-01-02T13:00:00Z"
     }
   },
@@ -281,7 +281,7 @@
       "activo": true,
       "vendedor": 1202,
       "observaciones": "Excelente estado general, peritaje reciente.",
-      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "imagen": "vehiculos/Suzuki Swift Gris Plata.png",
       "created_at": "2026-01-02T19:00:00Z"
     }
   },
@@ -301,7 +301,7 @@
       "activo": true,
       "vendedor": 1202,
       "observaciones": "Disponible para revisión mecánica y prueba de manejo.",
-      "imagen": "vehiculos/placeholders/campero_placeholder.jpg",
+      "imagen": "vehiculos/Jeep Wrangler Negro.png",
       "created_at": "2026-01-03T01:00:00Z"
     }
   },
@@ -321,7 +321,7 @@
       "activo": true,
       "vendedor": 1202,
       "observaciones": "Precio negociable, se recibe peritaje.",
-      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "imagen": "vehiculos/Kia Picanto Gris Plata.png",
       "created_at": "2026-01-03T07:00:00Z"
     }
   },
@@ -341,7 +341,7 @@
       "activo": true,
       "vendedor": 1202,
       "observaciones": "Mantenimientos preventivos al día en taller especializado.",
-      "imagen": "vehiculos/placeholders/suv_placeholder.jpg",
+      "imagen": "vehiculos/Toyota RAV4 Gris Titanio.png",
       "created_at": "2026-01-03T13:00:00Z"
     }
   },
@@ -361,7 +361,7 @@
       "activo": true,
       "vendedor": 1202,
       "observaciones": "Mantenimientos preventivos al día en taller especializado.",
-      "imagen": "vehiculos/placeholders/automovil_placeholder.jpg",
+      "imagen": "vehiculos/Kia Picanto Gris Plata.png",
       "created_at": "2026-01-03T19:00:00Z"
     }
   } 
